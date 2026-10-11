@@ -152,80 +152,47 @@
 .space-y-space-sm > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem !important; }
 .space-y-space-md > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem !important; }
 
-/* 5. Keyframe Animations */
-@keyframes flowDash {
-  to {
-    stroke-dashoffset: -32;
-  }
-}
-@keyframes pulseGlow {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.85;
-    box-shadow: 0 0 15px rgba(79, 70, 229, 0.45);
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 1;
-    box-shadow: 0 0 28px rgba(79, 70, 229, 0.8), 0 0 45px rgba(5, 150, 105, 0.4);
-  }
-}
-@keyframes scannerBar {
-  0% { transform: translateY(-100%); opacity: 0; }
-  25% { opacity: 0.6; }
-  75% { opacity: 0.6; }
-  100% { transform: translateY(320px); opacity: 0; }
-}
-@keyframes particleTravelHorizontal {
-  0% { transform: translateX(0); opacity: 0; }
-  15% { opacity: 1; }
-  85% { opacity: 1; }
-  100% { transform: translateX(100%); opacity: 0; }
-}
-@keyframes gentleFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-}
-@keyframes kineticShimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+/* 5. Motion Disabled (Clean Static Presentation) */
+.flow-line-anim,
+.flow-line-fast {
+  stroke-dasharray: none !important;
+  animation: none !important;
 }
 
-.flow-line-anim {
-  stroke-dasharray: 6 6;
-  animation: flowDash 1.2s linear infinite;
-}
-.flow-line-fast {
-  stroke-dasharray: 4 4;
-  animation: flowDash 0.8s linear infinite;
-}
 .pulse-bridge {
-  animation: pulseGlow 3s ease-in-out infinite;
+  animation: none !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
 }
+
 .scanner-active {
-  animation: scannerBar 3.5s ease-in-out infinite;
+  display: none !important;
+  animation: none !important;
 }
+
 .float-card {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
+
 .float-card:hover {
-  transform: translateY(-4px);
+  transform: none !important;
 }
+
 .kinetic-border {
-  background: linear-gradient(90deg, #4f46e5 0%, #059669 50%, #4f46e5 100%);
-  background-size: 200% 100%;
-  animation: kineticShimmer 4s linear infinite;
+  animation: none !important;
+  background: #4f46e5 !important;
 }
+
+/* Globally disable all pulse, ping, and spin motion */
+.animate-pulse,
+.animate-ping,
+.animate-spin {
+  animation: none !important;
+}
+
 .nav-scrolled {
   background-color: rgba(9, 13, 22, 0.85) !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3) !important;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .flow-line-anim, .flow-line-fast, .pulse-bridge, .scanner-active, .kinetic-border {
-    animation: none !important;
-  }
 }

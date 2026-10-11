@@ -209,7 +209,7 @@ export default function Home() {
 
             <div className="relative z-20 max-w-[1240px] mx-auto px-6 pt-36 md:pt-44 flex flex-col items-center text-center">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/35 shadow-sm mb-6">
-                <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                <span className="w-2 h-2 rounded-full bg-white"></span>
                 <span className="font-label-eyebrow text-label-eyebrow text-white uppercase tracking-wider font-semibold">
                   AI Workflow Audit & Automation Consultancy
                 </span>
@@ -276,7 +276,7 @@ export default function Home() {
                         Institutional Velocity Audit
                       </span>
                       <span className="inline-flex items-center gap-1 ml-2 px-2 py-0.5 rounded-full bg-status-velocity-bg text-status-velocity-text font-code-stat text-[10px] font-semibold">
-                        <span className="w-1.5 h-1.5 rounded-full bg-status-velocity-text animate-pulse"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-status-velocity-text"></span>
                         60 FPS STREAM
                       </span>
                     </div>
@@ -355,7 +355,6 @@ export default function Home() {
                             </filter>
                           </defs>
                           <path
-                            className="flow-line-fast"
                             d="M 285 180 L 315 180"
                             fill="none"
                             filter="url(#heroGlowPage)"
@@ -363,14 +362,12 @@ export default function Home() {
                             strokeWidth="3"
                           />
                           <path
-                            className="flow-line-anim"
                             d="M 260 80 C 290 80, 310 160, 340 160"
                             fill="none"
                             stroke="rgba(79, 70, 229, 0.4)"
                             strokeWidth="1.5"
                           />
                           <path
-                            className="flow-line-anim"
                             d="M 260 280 C 290 280, 310 200, 340 200"
                             fill="none"
                             stroke="rgba(5, 150, 105, 0.4)"
@@ -390,7 +387,7 @@ export default function Home() {
                                   Before
                                 </span>
                                 <span className="inline-flex items-center gap-1 text-[11px] font-code-stat text-status-friction-text">
-                                  <span className="w-1.5 h-1.5 rounded-full bg-status-friction-text animate-ping"></span>
+                                  <span className="w-1.5 h-1.5 rounded-full bg-status-friction-text"></span>
                                   Bottlenecks
                                 </span>
                               </div>
@@ -407,7 +404,7 @@ export default function Home() {
                                   </span>
                                 </div>
                                 <span className="font-code-stat text-[11px] px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold flex items-center gap-1">
-                                  <span className="w-1 h-1 rounded-full bg-status-friction-text animate-pulse"></span>
+                                  <span className="w-1 h-1 rounded-full bg-status-friction-text"></span>
                                   120+/day
                                 </span>
                               </div>
@@ -461,17 +458,16 @@ export default function Home() {
                         </div>
 
                         {/* Bridge Badge */}
-                        <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex-col items-center justify-center p-2.5 rounded-xl bg-surface-dark text-surface-bg shadow-2xl text-center w-32 border border-primary/40 pulse-bridge">
-                          <div className="absolute -top-1 w-2 h-2 rounded-full bg-tertiary-fixed animate-ping"></div>
+                        <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex-col items-center justify-center p-2.5 rounded-xl bg-surface-dark text-surface-bg shadow-2xl text-center w-32 border border-primary/40">
                           <div className="flex items-center gap-1 mb-0.5">
                             <span className="font-code-stat text-[12px] text-tertiary-fixed font-bold">//</span>
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
                           </div>
                           <span className="font-label-eyebrow text-[10px] leading-tight text-slate-300 font-semibold">
                             We find, automate and streamline this
                           </span>
                           <div className="flex items-center gap-1 mt-1 text-[9px] text-tertiary-fixed font-code-stat">
-                            <span className="material-symbols-outlined text-[12px] animate-spin">autorenew</span>
+                            <span className="material-symbols-outlined text-[12px]">autorenew</span>
                             <span>AUTOMATING</span>
                           </div>
                         </div>
@@ -486,7 +482,7 @@ export default function Home() {
                                   After
                                 </span>
                                 <span className="inline-flex items-center gap-1 text-[11px] font-code-stat text-status-velocity-text">
-                                  <span className="w-1.5 h-1.5 rounded-full bg-status-velocity-text animate-pulse"></span>
+                                  <span className="w-1.5 h-1.5 rounded-full bg-status-velocity-text"></span>
                                   Real-time Flow
                                 </span>
                               </div>
@@ -497,7 +493,7 @@ export default function Home() {
                             <div className="space-y-2.5">
                               <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm hover:bg-status-velocity-bg/40 hover:border-l-2 hover:border-status-velocity-text transition-all">
                                 <div className="flex items-center gap-2 min-w-0">
-                                  <span className="material-symbols-outlined text-status-velocity-text text-[18px] animate-pulse">bolt</span>
+                                  <span className="material-symbols-outlined text-status-velocity-text text-[18px]">bolt</span>
                                   <span className="font-body-sm text-body-sm text-on-surface truncate">
                                     AI triages & initiates instant reply
                                   </span>
@@ -555,14 +551,12 @@ export default function Home() {
                             <div className="relative w-14 h-8 flex items-center justify-center">
                               <svg className="w-14 h-8 text-status-velocity-text overflow-visible" fill="none" viewBox="0 0 56 28">
                                 <path
-                                  className="flow-line-anim"
                                   d="M2 24L14 18L26 21L40 8L54 4"
                                   stroke="currentColor"
                                   strokeLinecap="round"
                                   strokeLinejoin="round"
                                   strokeWidth="2.5"
                                 />
-                                <circle className="animate-ping" cx="54" cy="4" fill="#059669" r="3" />
                                 <circle cx="54" cy="4" fill="#059669" r="2.5" />
                               </svg>
                             </div>
@@ -607,7 +601,7 @@ export default function Home() {
                     HOW IT WORKS
                   </span>
                   <span className="px-2 py-0.5 rounded-full bg-status-velocity-bg text-status-velocity-text font-code-stat text-[10px] font-semibold flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-status-velocity-text animate-ping"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-status-velocity-text"></span>
                     PIPELINE ACTIVE
                   </span>
                 </div>
@@ -635,7 +629,7 @@ export default function Home() {
               <div className="hidden lg:block absolute top-[52px] left-[6%] right-[6%] h-[3px] pointer-events-none z-0">
                 <div className="absolute inset-0 bg-border-slate-subtle/80 rounded-full"></div>
                 <svg className="absolute inset-0 w-full h-[6px] -top-[1.5px]" preserveAspectRatio="none">
-                  <line className="flow-line-fast" stroke="url(#pipeGradReact2)" strokeWidth="3" x1="0" x2="100%" y1="3" y2="3"></line>
+                  <line stroke="url(#pipeGradReact2)" strokeWidth="3" x1="0" x2="100%" y1="3" y2="3"></line>
                   <defs>
                     <linearGradient id="pipeGradReact2" x1="0%" x2="100%" y1="0%" y2="0%">
                       <stop offset="0%" stopColor="#4f46e5" />
@@ -647,13 +641,13 @@ export default function Home() {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative z-10">
-                <div className="float-card bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-lg transition-all border border-border-slate-subtle/80 group">
+                <div className="bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-all border border-border-slate-subtle/80 group">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
+                      <div className="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
                         <span className="material-symbols-outlined text-[22px]">search</span>
                       </div>
-                      <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:animate-ping transition-colors"></span>
+                      <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
@@ -666,13 +660,13 @@ export default function Home() {
                   <p className="font-body-sm text-body-sm text-text-body">We learn about your product, users, team and current workflows.</p>
                 </div>
 
-                <div className="float-card bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-lg transition-all border border-border-slate-subtle/80 group">
+                <div className="bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-all border border-border-slate-subtle/80 group">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
+                      <div className="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
                         <span className="material-symbols-outlined text-[22px]">query_stats</span>
                       </div>
-                      <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:animate-ping transition-colors"></span>
+                      <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
@@ -685,13 +679,13 @@ export default function Home() {
                   <p className="font-body-sm text-body-sm text-text-body">We identify <strong className="text-on-surface font-semibold">gaps</strong>, bottlenecks and high-impact automation opportunities.</p>
                 </div>
 
-                <div className="float-card bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-lg transition-all border border-border-slate-subtle/80 group">
+                <div className="bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-all border border-border-slate-subtle/80 group">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
+                      <div className="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
                         <span className="material-symbols-outlined text-[22px]">ballot</span>
                       </div>
-                      <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:animate-ping transition-colors"></span>
+                      <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
@@ -704,13 +698,13 @@ export default function Home() {
                   <p className="font-body-sm text-body-sm text-text-body">We recommend what to automate, estimate impact and create an implementation plan.</p>
                 </div>
 
-                <div className="float-card bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-lg transition-all border border-border-slate-subtle/80 group">
+                <div className="bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-all border border-border-slate-subtle/80 group">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
+                      <div className="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
                         <span className="material-symbols-outlined text-[22px]">inventory_2</span>
                       </div>
-                      <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:animate-ping transition-colors"></span>
+                      <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
@@ -723,14 +717,14 @@ export default function Home() {
                   <p className="font-body-sm text-body-sm text-text-body">We design, build and integrate the solution with your existing tools and product.</p>
                 </div>
 
-                <div className="float-card bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-lg transition-all border border-status-velocity-badge/80 group relative overflow-hidden">
+                <div className="bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-all border border-status-velocity-badge/80 group relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-status-velocity-text"></div>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-lg bg-status-velocity-bg flex items-center justify-center text-status-velocity-text group-hover:scale-110 group-hover:bg-status-velocity-text group-hover:text-surface-bg transition-all shadow-xs">
+                      <div className="w-10 h-10 rounded-lg bg-status-velocity-bg flex items-center justify-center text-status-velocity-text group-hover:bg-status-velocity-text group-hover:text-surface-bg transition-all shadow-xs">
                         <span className="material-symbols-outlined text-[22px]">ssid_chart</span>
                       </div>
-                      <span className="w-2 h-2 rounded-full bg-status-velocity-text animate-ping"></span>
+                      <span className="w-2 h-2 rounded-full bg-status-velocity-text"></span>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
@@ -805,8 +799,6 @@ export default function Home() {
 
                 <div className="lg:col-span-7">
                   <div className="relative bg-surface-bg rounded-xl p-6 sm:p-8 shadow-xl space-y-6 border border-border-slate-subtle/80 overflow-hidden">
-                    <div className="absolute inset-x-0 h-10 pointer-events-none scanner-active bg-gradient-to-b from-primary/10 via-primary/5 to-transparent border-t border-primary/30 z-20"></div>
-
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border-slate-subtle/60">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary">
@@ -815,7 +807,7 @@ export default function Home() {
                         <div>
                           <h3 className="font-headline-md text-headline-md font-bold text-on-surface">Product Analysis Report</h3>
                           <div className="flex items-center gap-1.5 text-[11px] font-code-stat text-status-velocity-text">
-                            <span className="w-1.5 h-1.5 rounded-full bg-status-velocity-text animate-pulse"></span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-status-velocity-text"></span>
                             LIVE SCANNING: INGESTED 42 WORKFLOW NODES
                           </div>
                         </div>
@@ -834,7 +826,7 @@ export default function Home() {
                             }`}
                           >
                             {activeTab === tabKey && (
-                              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                              <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
                             )}
                             {tabKey}
                           </button>
@@ -859,7 +851,7 @@ export default function Home() {
                             className="p-3 rounded-lg bg-surface-subtle flex items-center justify-between gap-2 shadow-sm border border-transparent hover:border-primary/30 transition-all"
                           >
                             <div className="flex items-center gap-2 min-w-0">
-                              <span className="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0 animate-pulse">
+                              <span className="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0">
                                 check_circle
                               </span>
                               <span className="font-body-sm text-body-sm text-on-surface truncate">
@@ -888,11 +880,11 @@ export default function Home() {
                         </p>
 
                         <div className="flex items-end justify-center gap-2 h-14 pt-2">
-                          <div className="w-3 bg-primary/30 rounded-t h-4 hover:h-6 transition-all duration-700"></div>
-                          <div className="w-3 bg-primary/50 rounded-t h-6 hover:h-8 transition-all duration-700"></div>
-                          <div className="w-3 bg-primary/70 rounded-t h-9 hover:h-11 transition-all duration-700"></div>
-                          <div className="w-3 bg-primary/90 rounded-t h-12 hover:h-13 transition-all duration-700"></div>
-                          <div className="w-3 bg-primary rounded-t h-14 animate-pulse"></div>
+                          <div className="w-3 bg-primary/30 rounded-t h-4"></div>
+                          <div className="w-3 bg-primary/50 rounded-t h-6"></div>
+                          <div className="w-3 bg-primary/70 rounded-t h-9"></div>
+                          <div className="w-3 bg-primary/90 rounded-t h-12"></div>
+                          <div className="w-3 bg-primary rounded-t h-14"></div>
                         </div>
                       </div>
                     </div>
