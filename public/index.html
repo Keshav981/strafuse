@@ -1,0 +1,1222 @@
+<!-- Copied identical content for public static serving -->
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_standard" name="shell-type"/>
+  <title>Strafuse // AI Workflow Audit & Automation Consultancy</title>
+  <meta name="description" content="Turn manual work into your biggest advantage. We audit your product and operations, find what's slowing you down, and build AI automation."/>
+  
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* Kinetic Workflow Diagram Animations */
+    @keyframes flowDash {
+      to {
+        stroke-dashoffset: -32;
+      }
+    }
+    @keyframes pulseGlow {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.85;
+        box-shadow: 0 0 15px rgba(79, 70, 229, 0.45);
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 1;
+        box-shadow: 0 0 28px rgba(79, 70, 229, 0.8), 0 0 45px rgba(5, 150, 105, 0.4);
+      }
+    }
+    @keyframes scannerBar {
+      0% { transform: translateY(-100%); opacity: 0; }
+      25% { opacity: 0.6; }
+      75% { opacity: 0.6; }
+      100% { transform: translateY(320px); opacity: 0; }
+    }
+    @keyframes particleTravelHorizontal {
+      0% { transform: translateX(0); opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+    @keyframes kineticShimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .flow-line-anim {
+      stroke-dasharray: 6 6;
+      animation: flowDash 1.2s linear infinite;
+    }
+    .flow-line-fast {
+      stroke-dasharray: 4 4;
+      animation: flowDash 0.8s linear infinite;
+    }
+    .pulse-bridge {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+    .scanner-active {
+      animation: scannerBar 3.5s ease-in-out infinite;
+    }
+    .float-card {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    }
+    .float-card:hover {
+      transform: translateY(-4px);
+    }
+    .kinetic-border {
+      background: linear-gradient(90deg, #4f46e5 0%, #059669 50%, #4f46e5 100%);
+      background-size: 200% 100%;
+      animation: kineticShimmer 4s linear infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .flow-line-anim, .flow-line-fast, .pulse-bridge, .scanner-active, .kinetic-border {
+        animation: none !important;
+      }
+    }
+    .nav-scrolled {
+      background-color: rgba(9, 13, 22, 0.85) !important;
+      backdrop-filter: blur(16px) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3) !important;
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed": "#0f0069",
+            "status-velocity-badge": "#D1FAE5",
+            "surface-bright": "#faf9ff",
+            "border-slate-subtle": "#E2E8F0",
+            "status-velocity-bg": "#ECFDF5",
+            "surface-bg": "#FFFFFF",
+            "primary-fixed": "#e2dfff",
+            "surface-dark": "#090D16",
+            "surface": "#faf9ff",
+            "surface-dark-card": "#0F172A",
+            "status-friction-bg": "#FFF1F2",
+            "secondary-fixed-dim": "#adc6ff",
+            "on-error-container": "#93000a",
+            "inverse-primary": "#c3c0ff",
+            "secondary-fixed": "#d8e2ff",
+            "on-background": "#181b25",
+            "surface-container": "#ebedfb",
+            "inverse-on-surface": "#eef0fe",
+            "status-friction-text": "#E11D48",
+            "on-tertiary": "#ffffff",
+            "secondary": "#0058be",
+            "outline-variant": "#c7c4d8",
+            "text-body": "#334155",
+            "surface-container-highest": "#dfe2ef",
+            "primary-fixed-dim": "#c3c0ff",
+            "on-secondary-fixed": "#001a42",
+            "inverse-surface": "#2c303a",
+            "surface-subtle": "#F8FAFC",
+            "on-secondary": "#ffffff",
+            "background": "#faf9ff",
+            "tertiary-container": "#006e4b",
+            "on-tertiary-fixed-variant": "#005236",
+            "on-tertiary-fixed": "#002113",
+            "surface-tint": "#4d44e3",
+            "primary-container": "#4f46e5",
+            "secondary-container": "#2170e4",
+            "border-slate-dark": "#1E293B",
+            "on-secondary-fixed-variant": "#004395",
+            "on-primary-fixed-variant": "#3323cc",
+            "border-slate-medium": "#CBD5E1",
+            "on-secondary-container": "#fefcff",
+            "status-friction-badge": "#FFE4E6",
+            "surface-dim": "#d7d9e7",
+            "surface-container-low": "#f1f3ff",
+            "surface-container-lowest": "#ffffff",
+            "electric-indigo-subtle": "#EEF2FF",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "surface-variant": "#dfe2ef",
+            "outline": "#777587",
+            "on-primary-container": "#dad7ff",
+            "surface-container-high": "#e5e8f5",
+            "on-tertiary-container": "#67f4b7",
+            "tertiary-fixed": "#6ffbbe",
+            "text-muted": "#64748B",
+            "tertiary": "#005338",
+            "status-velocity-text": "#059669",
+            "tertiary-fixed-dim": "#4edea3",
+            "error": "#ba1a1a",
+            "on-surface": "#181b25",
+            "on-primary": "#ffffff",
+            "primary": "#3525cd",
+            "on-surface-variant": "#464555"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            "space-2xl": "4rem",
+            "space-md": "1rem",
+            "margin-mobile": "1.25rem",
+            "margin-desktop": "5rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            margin: "2rem",
+            "space-xs": "0.25rem",
+            gutter: "1.5rem",
+            "gutter-sm": "1rem",
+            "space-lg": "1.5rem",
+            "space-3xl": "6rem"
+          },
+          fontFamily: {
+            "body-md": ["Plus Jakarta Sans"],
+            "label-badge": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-eyebrow": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "display-hero": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "code-stat": ["JetBrains Mono"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "body-md": ["15px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "400" }],
+            "label-badge": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.025em", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "400" }],
+            "label-eyebrow": ["11px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "700" }],
+            "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+            "headline-xl-mobile": ["30px", { lineHeight: "38px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "display-hero": ["56px", { lineHeight: "64px", letterSpacing: "-0.03em", fontWeight: "800" }],
+            "display-hero-mobile": ["38px", { lineHeight: "44px", letterSpacing: "-0.025em", fontWeight: "800" }],
+            "code-stat": ["14px", { lineHeight: "18px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.015em", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-body antialiased min-h-screen flex flex-col">
+
+  <!-- NAVBAR -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
+    <div class="h-20 max-w-[1240px] mx-auto px-6 flex items-center justify-between gap-space-lg">
+      <a class="flex items-center gap-space-xs group" data-path="home" href="#">
+        <div class="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center font-code-stat text-code-stat text-white group-hover:bg-white group-hover:text-primary transition-all font-bold">S</div>
+        <span class="font-headline-md text-headline-md tracking-tight text-white font-bold drop-shadow-sm">Strafuse</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8">
+        <a class="text-white/85 hover:text-white transition-colors font-body-md text-body-md drop-shadow-sm font-medium" data-path="how-it-works" href="#how-it-works">How It Works</a>
+        <a class="text-white/85 hover:text-white transition-colors font-body-md text-body-md drop-shadow-sm font-medium" data-path="solutions" href="#product-audit">Product Audit</a>
+        <a class="text-white/85 hover:text-white transition-colors font-body-md text-body-md drop-shadow-sm font-medium" data-path="use-cases" href="#use-cases">Use Cases</a>
+        <a class="text-white/85 hover:text-white transition-colors font-body-md text-body-md drop-shadow-sm font-medium" data-path="pricing" href="#consultation">Pricing & Consultation</a>
+      </nav>
+
+      <div class="flex items-center gap-space-md">
+        <a class="hidden sm:inline-flex text-white/90 hover:text-white font-body-md text-body-md font-medium transition-colors drop-shadow-sm" href="#consultation">Sign in</a>
+        <a class="h-11 px-6 rounded-full bg-white text-surface-dark font-label-badge text-[14px] inline-flex items-center justify-center hover:bg-white/90 transition-all shadow-[0_4px_18px_rgba(0,0,0,0.12)] font-semibold group" data-path="book-an-audit" href="#consultation">
+          <span>Book an Audit</span>
+        </a>
+        <button id="mobile-toggle" aria-label="Toggle Mobile Menu" class="md:hidden text-white p-2 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-md">
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surface-dark/95 backdrop-blur-xl border-b border-border-slate-dark px-6 py-6 space-y-4">
+      <a class="block text-white/90 hover:text-white font-body-md" href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+      <a class="block text-white/90 hover:text-white font-body-md" href="#product-audit" onclick="closeMobileMenu()">Product Audit</a>
+      <a class="block text-white/90 hover:text-white font-body-md" href="#use-cases" onclick="closeMobileMenu()">Use Cases</a>
+      <a class="block text-white/90 hover:text-white font-body-md" href="#consultation" onclick="closeMobileMenu()">Book an Audit</a>
+    </div>
+  </header>
+
+  <main class="w-full bg-surface flex-1">
+    <div class="flex flex-col w-full">
+
+      <!-- 1. HIGH ALTITUDE SKY HERO SECTION -->
+      <div class="relative w-full overflow-hidden bg-[#258bf5] min-h-[820px] lg:min-h-[960px] flex flex-col justify-between">
+        <img alt="High altitude blue sky with soft white clouds" class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkZUaO2u11UUL0BuXENNZiY9YUeJcTPJTtHZZhwgU0CCEVArw80T0DPUVpAg6FFIS-FEac2C4ddFFwkfnGfHyc0gJ0K50xF1FSbzRZ5EbAKoxGnzKJKvLzE7yqK6stsWLvAMfJ9VNl5rOIW92EVbSXDey4dVS1A0x3LtFqDMGMPVvc9E2eyi45gPirBGj38-PgaBhVvp1Dx50UQcz_HdkdU_dH7IsrwmrjnsROkpL1pUVh1V4Bo4ZkSQ"/>
+        
+        <div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-blue-900/20 via-transparent to-surface/90"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none z-10"></div>
+
+        <div class="relative z-20 max-w-[1240px] mx-auto px-6 pt-36 md:pt-44 flex flex-col items-center text-center">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/35 shadow-sm mb-6">
+            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+            <span class="font-label-eyebrow text-label-eyebrow text-white uppercase tracking-wider font-semibold">AI Workflow Audit & Automation Consultancy</span>
+          </div>
+
+          <h1 class="font-display-hero text-[42px] sm:text-[54px] lg:text-[72px] leading-[1.08] text-white tracking-tight font-extrabold max-w-4xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.18)]">
+            Turn manual work into your <br class="hidden sm:inline"/>biggest advantage.
+          </h1>
+
+          <p class="font-body-lg text-[17px] sm:text-[20px] leading-relaxed text-white/95 max-w-2xl mt-5 drop-shadow-[0_1px_4px_rgba(0,0,0,0.15)] font-normal">
+            We audit your product and operations, find what's slowing you down, and build AI automation to save time, reduce costs, and unlock growth.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-8">
+            <a class="h-12 px-8 rounded-full bg-white text-surface-dark font-label-badge text-[14px] inline-flex items-center justify-center font-bold hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_10px_25px_-5px_rgba(0,0,0,0.2)] group" href="#consultation">
+              <span>Book an AI Workflow Audit</span>
+              <span class="material-symbols-outlined text-[18px] ml-1.5 group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+            </a>
+            <a class="h-12 px-8 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/40 font-label-badge text-[14px] inline-flex items-center justify-center font-semibold transition-all shadow-sm" href="#how-it-works">
+              <span>See How It Works</span>
+            </a>
+          </div>
+
+          <p class="text-white/80 font-body-sm text-[13px] pt-4 tracking-wide drop-shadow-xs">
+            No generic templates • Built around your business • From audit to implementation
+          </p>
+
+          <div class="w-full max-w-[1140px] mt-12 sm:mt-16 relative z-30 transition-all">
+            <div class="rounded-t-[28px] bg-surface-bg/95 backdrop-blur-xl border-t border-x border-white/90 shadow-[0_-15px_40px_rgba(15,23,42,0.12),0_25px_60px_rgba(0,0,0,0.08)] overflow-hidden">
+              <div class="px-6 py-3.5 bg-surface-subtle/90 border-b border-border-slate-subtle/80 flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 rounded-full bg-[#ff5f56]/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e]/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#27c93f]/80 inline-block"></span>
+                  </div>
+                  <div class="h-4 w-px bg-border-slate-medium/60 mx-1"></div>
+                  <div class="flex items-center gap-2 px-2.5 py-1 rounded-md bg-surface-bg border border-border-slate-subtle shadow-xs">
+                    <span class="font-code-stat text-[11px] text-primary font-bold">//</span>
+                    <span class="font-body-sm text-[12px] font-semibold text-on-surface">Strafuse Live Workspace</span>
+                    <span class="material-symbols-outlined text-[16px] text-text-muted">unfold_more</span>
+                  </div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-2 text-[12px] font-body-sm text-text-muted">
+                  <span>Workflow Intelligence</span>
+                  <span>/</span>
+                  <span class="text-on-surface font-semibold">Institutional Velocity Audit</span>
+                  <span class="inline-flex items-center gap-1 ml-2 px-2 py-0.5 rounded-full bg-status-velocity-bg text-status-velocity-text font-code-stat text-[10px] font-semibold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-status-velocity-text animate-pulse"></span>
+                    60 FPS STREAM
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <div class="hidden sm:flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-bg border border-border-slate-subtle text-text-muted text-[12px]">
+                    <span class="material-symbols-outlined text-[15px]">calendar_today</span>
+                    <span>Last 30 Days</span>
+                  </div>
+                  <a href="#consultation" class="px-2.5 py-1 rounded-md bg-primary text-white text-[12px] font-semibold flex items-center gap-1 hover:bg-primary/90 transition-colors">
+                    <span class="material-symbols-outlined text-[15px]">share</span>
+                    <span class="hidden sm:inline">Export Audit</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="p-6 md:p-8 bg-surface-bg space-y-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div class="p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
+                    <div class="font-body-sm text-[12px] text-text-muted font-medium">Weekly Bottlenecks</div>
+                    <div class="font-headline-lg text-[24px] font-bold text-status-friction-text mt-1 flex items-baseline gap-2">
+                      <span>-72%</span>
+                      <span class="text-[11px] font-normal text-text-muted">eliminated</span>
+                    </div>
+                    <div class="text-[11px] text-text-muted mt-1 font-code-stat">Audit Spec v4.2</div>
+                  </div>
+                  
+                  <div class="p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
+                    <div class="font-body-sm text-[12px] text-text-muted font-medium">Time Reclaimed / Week</div>
+                    <div class="font-headline-lg text-[24px] font-bold text-status-velocity-text mt-1 flex items-baseline gap-2">
+                      <span>18.5 hrs</span>
+                      <span class="text-[11px] font-normal text-status-velocity-text">/ operator</span>
+                    </div>
+                    <div class="text-[11px] text-text-muted mt-1 font-code-stat">Measured in real-time</div>
+                  </div>
+
+                  <div class="p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
+                    <div class="font-body-sm text-[12px] text-text-muted font-medium">Autonomous Execution</div>
+                    <div class="font-headline-lg text-[24px] font-bold text-primary mt-1 flex items-baseline gap-2">
+                      <span>94.8%</span>
+                      <span class="text-[11px] font-normal text-text-muted">zero-touch</span>
+                    </div>
+                    <div class="text-[11px] text-text-muted mt-1 font-code-stat">Agent pipeline</div>
+                  </div>
+
+                  <div class="p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
+                    <div class="font-body-sm text-[12px] text-text-muted font-medium">Workflow Throughput</div>
+                    <div class="font-headline-lg text-[24px] font-bold text-on-surface mt-1 flex items-baseline gap-2">
+                      <span>4.6x</span>
+                      <span class="text-[11px] font-normal text-status-velocity-text">velocity</span>
+                    </div>
+                    <div class="text-[11px] text-text-muted mt-1 font-code-stat">Production verified</div>
+                  </div>
+                </div>
+
+                <div class="relative">
+                  <div class="hidden md:block absolute inset-0 pointer-events-none z-10">
+                    <svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 600 360">
+                      <defs>
+                        <lineargradient id="heroStreamGrad2" x1="0%" x2="100%" y1="0%" y2="0%">
+                          <stop offset="0%" stop-color="#E11D48" stop-opacity="0.8"></stop>
+                          <stop offset="50%" stop-color="#4F46E5" stop-opacity="1"></stop>
+                          <stop offset="100%" stop-color="#059669" stop-opacity="0.9"></stop>
+                        </lineargradient>
+                        <filter id="heroGlow2">
+                          <fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur>
+                          <femerge>
+                            <femergenode></femergenode>
+                            <femergenode in="SourceGraphic"></femergenode>
+                          </femerge>
+                        </filter>
+                      </defs>
+                      <path class="flow-line-fast" d="M 285 180 L 315 180" fill="none" filter="url(#heroGlow2)" stroke="url(#heroStreamGrad2)" stroke-width="3"></path>
+                      <path class="flow-line-anim" d="M 260 80 C 290 80, 310 160, 340 160" fill="none" stroke="rgba(79, 70, 229, 0.4)" stroke-width="1.5"></path>
+                      <path class="flow-line-anim" d="M 260 280 C 290 280, 310 200, 340 200" fill="none" stroke="rgba(5, 150, 105, 0.4)" stroke-width="1.5"></path>
+                    </svg>
+                  </div>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch text-left">
+                    <!-- BEFORE CARD -->
+                    <div class="bg-surface-subtle rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between border border-status-friction-badge/60 relative overflow-hidden group">
+                      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-status-friction-text/40 to-transparent"></div>
+                      <div>
+                        <div class="flex items-center justify-between pb-3">
+                          <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-1 rounded-full bg-status-friction-badge text-status-friction-text font-label-badge text-label-badge uppercase tracking-wider">Before</span>
+                            <span class="inline-flex items-center gap-1 text-[11px] font-code-stat text-status-friction-text">
+                              <span class="w-1.5 h-1.5 rounded-full bg-status-friction-text animate-ping"></span>
+                              Bottlenecks
+                            </span>
+                          </div>
+                          <span class="material-symbols-outlined text-outline-variant text-[18px]">history</span>
+                        </div>
+                        <div class="space-y-2.5">
+                          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm transition-all hover:bg-status-friction-bg/30">
+                            <div class="flex items-center gap-2 min-w-0">
+                              <span class="material-symbols-outlined text-text-muted text-[18px]">mail</span>
+                              <span class="font-body-sm text-body-sm text-on-surface truncate">Leads scattered across inboxes</span>
+                            </div>
+                            <span class="font-code-stat text-[11px] px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold flex items-center gap-1">
+                              <span class="w-1 h-1 rounded-full bg-status-friction-text animate-pulse"></span>
+                              120+/day
+                            </span>
+                          </div>
+                          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm transition-all hover:bg-status-friction-bg/30">
+                            <div class="flex items-center gap-2 min-w-0">
+                              <span class="material-symbols-outlined text-text-muted text-[18px]">person</span>
+                              <span class="font-body-sm text-body-sm text-on-surface truncate">Manual follow-ups & drafting</span>
+                            </div>
+                            <span class="font-code-stat text-[11px] px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold">3-4 hrs/day</span>
+                          </div>
+                          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm transition-all hover:bg-status-friction-bg/30">
+                            <div class="flex items-center gap-2 min-w-0">
+                              <span class="material-symbols-outlined text-text-muted text-[18px]">content_copy</span>
+                              <span class="font-body-sm text-body-sm text-on-surface truncate">Copy-pasting CSVs to CRM</span>
+                            </div>
+                            <span class="font-code-stat text-[11px] px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold">2 hrs/day</span>
+                          </div>
+                          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm transition-all hover:bg-status-friction-bg/30">
+                            <div class="flex items-center gap-2 min-w-0">
+                              <span class="material-symbols-outlined text-text-muted text-[18px]">sync</span>
+                              <span class="font-body-sm text-body-sm text-on-surface truncate">Updating disjointed tools manually</span>
+                            </div>
+                            <span class="font-code-stat text-[11px] px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold">1-2 hrs/day</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mt-3 p-3 rounded-lg bg-status-friction-bg text-status-friction-text flex items-center gap-3 border border-status-friction-badge/50">
+                        <div class="w-8 h-8 rounded-full bg-status-friction-badge flex items-center justify-center shrink-0">
+                          <span class="material-symbols-outlined text-status-friction-text text-[18px]">timer_off</span>
+                        </div>
+                        <div class="leading-tight">
+                          <div class="font-headline-md text-[16px] font-bold">8–15 hours / week</div>
+                          <div class="font-body-sm text-[12px] opacity-90">spent on manual repetitive toil</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Bridge Badge -->
+                    <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex-col items-center justify-center p-2.5 rounded-xl bg-surface-dark text-surface-bg shadow-2xl text-center w-32 border border-primary/40 pulse-bridge">
+                      <div class="absolute -top-1 w-2 h-2 rounded-full bg-tertiary-fixed animate-ping"></div>
+                      <div class="flex items-center gap-1 mb-0.5">
+                        <span class="font-code-stat text-[12px] text-tertiary-fixed font-bold">//</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+                      </div>
+                      <span class="font-label-eyebrow text-[10px] leading-tight text-slate-300 font-semibold">We find, automate and streamline this</span>
+                      <div class="flex items-center gap-1 mt-1 text-[9px] text-tertiary-fixed font-code-stat">
+                        <span class="material-symbols-outlined text-[12px] animate-spin" style="animation-duration: 6s;">autorenew</span>
+                        <span>AUTOMATING</span>
+                      </div>
+                    </div>
+
+                    <!-- AFTER CARD -->
+                    <div class="bg-surface-subtle rounded-xl p-5 shadow-md space-y-4 flex flex-col justify-between border border-status-velocity-badge/80 relative overflow-hidden group">
+                      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-status-velocity-text"></div>
+                      <div>
+                        <div class="flex items-center justify-between pb-3">
+                          <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-1 rounded-full bg-status-velocity-badge text-status-velocity-text font-label-badge text-label-badge uppercase tracking-wider">After</span>
+                            <span class="inline-flex items-center gap-1 text-[11px] font-code-stat text-status-velocity-text">
+                              <span class="w-1.5 h-1.5 rounded-full bg-status-velocity-text animate-pulse"></span>
+                              Real-time Flow
+                            </span>
+                          </div>
+                          <span class="material-symbols-outlined text-tertiary-container text-[18px]">verified</span>
+                        </div>
+                        <div class="space-y-2.5">
+                          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm transition-all hover:bg-status-velocity-bg/40 hover:border-l-2 hover:border-status-velocity-text">
+                            <div class="flex items-center gap-2 min-w-0">
+                              <span class="material-symbols-outlined text-status-velocity-text text-[18px] animate-pulse">bolt</span>
+                              <span class="font-body-sm text-body-sm text-on-surface truncate">AI triages & initiates instant reply</span>
+                            </div>
+                            <span class="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0">check</span>
+                          </div>
+                          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm transition-all hover:bg-status-velocity-bg/40 hover:border-l-2 hover:border-status-velocity-text">
+                            <div class="flex items-center gap-2 min-w-0">
+                              <span class="material-symbols-outlined text-status-velocity-text text-[18px]">schedule</span>
+                              <span class="font-body-sm text-body-sm text-on-surface truncate">Bidirectional sync across CRM & ops</span>
+                            </div>
+                            <span class="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0">check</span>
+                          </div>
+                          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm transition-all hover:bg-status-velocity-bg/40 hover:border-l-2 hover:border-status-velocity-text">
+                            <div class="flex items-center gap-2 min-w-0">
+                              <span class="material-symbols-outlined text-status-velocity-text text-[18px]">description</span>
+                              <span class="font-body-sm text-body-sm text-on-surface truncate">Contextual reports generated hourly</span>
+                            </div>
+                            <span class="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0">check</span>
+                          </div>
+                          <div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm transition-all hover:bg-status-velocity-bg/40 hover:border-l-2 hover:border-status-velocity-text">
+                            <div class="flex items-center gap-2 min-w-0">
+                              <span class="material-symbols-outlined text-status-velocity-text text-[18px]">trending_up</span>
+                              <span class="font-body-sm text-body-sm text-on-surface truncate">Team focused 100% on high leverage growth</span>
+                            </div>
+                            <span class="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0">check</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mt-3 p-3 rounded-lg bg-status-velocity-bg text-status-velocity-text flex items-center justify-between border border-status-velocity-badge/80">
+                        <div class="flex items-center gap-3">
+                          <div class="w-8 h-8 rounded-full bg-status-velocity-badge flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-status-velocity-text text-[18px]">speed</span>
+                          </div>
+                          <div class="leading-tight">
+                            <div class="font-headline-md text-[16px] font-bold">Hours saved</div>
+                            <div class="font-body-sm text-[12px] opacity-90">every week across teams</div>
+                          </div>
+                        </div>
+                        <div class="relative w-14 h-8 flex items-center justify-center">
+                          <svg class="w-14 h-8 text-status-velocity-text overflow-visible" fill="none" viewbox="0 0 56 28">
+                            <path class="flow-line-anim" d="M2 24L14 18L26 21L40 8L54 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+                            <circle class="animate-ping" cx="54" cy="4" fill="#059669" r="3"></circle>
+                            <circle cx="54" cy="4" fill="#059669" r="2.5"></circle>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 2. SOCIAL PROOF / LOGO BAR -->
+      <section class="w-full bg-surface-subtle py-12 border-b border-border-slate-subtle/40">
+        <div class="max-w-[1240px] mx-auto px-6 flex flex-col items-center gap-6">
+          <span class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-text-muted text-center">
+            TRUSTED BY FORWARD-THINKING STARTUPS AND TEAMS
+          </span>
+          <div class="flex flex-wrap items-center justify-center gap-8 md:gap-14 text-text-muted">
+            <span class="font-headline-md text-[20px] font-bold tracking-tight hover:text-on-surface transition-colors cursor-default">Razorpay</span>
+            <span class="font-headline-md text-[20px] font-extrabold tracking-widest hover:text-on-surface transition-colors cursor-default">OYO</span>
+            <span class="font-headline-md text-[20px] font-bold tracking-tight lowercase hover:text-on-surface transition-colors cursor-default">zepto</span>
+            <span class="font-headline-md text-[20px] font-semibold tracking-wide lowercase hover:text-on-surface transition-colors cursor-default">dunzo</span>
+            <div class="flex items-center gap-1 font-headline-md text-[20px] font-black tracking-tight hover:text-on-surface transition-colors cursor-default">
+              <span class="material-symbols-outlined text-[20px]">shield</span>
+              <span>CRED</span>
+            </div>
+            <span class="font-headline-md text-[20px] font-semibold tracking-tight lowercase hover:text-on-surface transition-colors cursor-default">slice</span>
+            <span class="font-headline-md text-[20px] font-bold tracking-tight lowercase hover:text-on-surface transition-colors cursor-default">meesho</span>
+            <span class="font-headline-md text-[20px] font-bold tracking-wider lowercase hover:text-on-surface transition-colors cursor-default">rapido</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. HOW IT WORKS -->
+      <section class="max-w-[1240px] mx-auto px-6 py-24 space-y-12" id="how-it-works">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="space-y-2 max-w-2xl">
+            <div class="flex items-center gap-2">
+              <span class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-primary font-bold">HOW IT WORKS</span>
+              <span class="px-2 py-0.5 rounded-full bg-status-velocity-bg text-status-velocity-text font-code-stat text-[10px] font-semibold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-status-velocity-text animate-ping"></span>
+                PIPELINE ACTIVE
+              </span>
+            </div>
+            <h2 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+              A simple, proven way to automate what matters.
+            </h2>
+            <p class="font-body-md text-body-md text-text-body">
+              We take a product-first approach — understand your business, find the real opportunities, build the right solution, and help you see the impact.
+            </p>
+          </div>
+          <div>
+            <a class="h-11 px-5 rounded-lg bg-surface-dark text-surface-bg font-label-badge text-label-badge inline-flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-sm group whitespace-nowrap" href="#product-audit">
+              <span>See Detailed Process</span>
+              <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="hidden lg:block absolute top-[52px] left-[6%] right-[6%] h-[3px] pointer-events-none z-0">
+            <div class="absolute inset-0 bg-border-slate-subtle/80 rounded-full"></div>
+            <svg class="absolute inset-0 w-full h-[6px] -top-[1.5px]" preserveaspectratio="none">
+              <line class="flow-line-fast" stroke="url(#pipeGrad2)" stroke-width="3" x1="0" x2="100%" y1="3" y2="3"></line>
+              <defs>
+                <lineargradient id="pipeGrad2" x1="0%" x2="100%" y1="0%" y2="0%">
+                  <stop offset="0%" stop-color="#4f46e5"></stop>
+                  <stop offset="50%" stop-color="#2170e4"></stop>
+                  <stop offset="100%" stop-color="#059669"></stop>
+                </lineargradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative z-10">
+            <div class="float-card bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-lg transition-all border border-border-slate-subtle/80 group">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <div class="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
+                    <span class="material-symbols-outlined text-[22px]">search</span>
+                  </div>
+                  <span class="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:animate-ping transition-colors"></span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <span class="font-code-stat text-[12px] text-primary font-semibold">01</span>
+                    <span class="h-px w-4 bg-primary/40"></span>
+                  </div>
+                  <h3 class="font-headline-md text-[18px] font-bold text-on-surface group-hover:text-primary transition-colors">Understand</h3>
+                </div>
+              </div>
+              <p class="font-body-sm text-body-sm text-text-body">We learn about your product, users, team and current workflows.</p>
+            </div>
+
+            <div class="float-card bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-lg transition-all border border-border-slate-subtle/80 group">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <div class="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
+                    <span class="material-symbols-outlined text-[22px]">query_stats</span>
+                  </div>
+                  <span class="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:animate-ping transition-colors"></span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <span class="font-code-stat text-[12px] text-primary font-semibold">02</span>
+                    <span class="h-px w-4 bg-primary/40"></span>
+                  </div>
+                  <h3 class="font-headline-md text-[18px] font-bold text-on-surface group-hover:text-primary transition-colors">Find Opportunities</h3>
+                </div>
+              </div>
+              <p class="font-body-sm text-body-sm text-text-body">We identify <strong class="text-on-surface font-semibold">gaps</strong>, bottlenecks and high-impact automation opportunities.</p>
+            </div>
+
+            <div class="float-card bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-lg transition-all border border-border-slate-subtle/80 group">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <div class="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
+                    <span class="material-symbols-outlined text-[22px]">ballot</span>
+                  </div>
+                  <span class="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:animate-ping transition-colors"></span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <span class="font-code-stat text-[12px] text-primary font-semibold">03</span>
+                    <span class="h-px w-4 bg-primary/40"></span>
+                  </div>
+                  <h3 class="font-headline-md text-[18px] font-bold text-on-surface group-hover:text-primary transition-colors">Plan & Prioritize</h3>
+                </div>
+              </div>
+              <p class="font-body-sm text-body-sm text-text-body">We recommend what to automate, estimate impact and create an implementation plan.</p>
+            </div>
+
+            <div class="float-card bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-lg transition-all border border-border-slate-subtle/80 group">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <div class="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
+                    <span class="material-symbols-outlined text-[22px]">inventory_2</span>
+                  </div>
+                  <span class="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:animate-ping transition-colors"></span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <span class="font-code-stat text-[12px] text-primary font-semibold">04</span>
+                    <span class="h-px w-4 bg-primary/40"></span>
+                  </div>
+                  <h3 class="font-headline-md text-[18px] font-bold text-on-surface group-hover:text-primary transition-colors">Build & Integrate</h3>
+                </div>
+              </div>
+              <p class="font-body-sm text-body-sm text-text-body">We design, build and integrate the solution with your existing tools and product.</p>
+            </div>
+
+            <div class="float-card bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-lg transition-all border border-status-velocity-badge/80 group relative overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-status-velocity-text"></div>
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <div class="w-10 h-10 rounded-lg bg-status-velocity-bg flex items-center justify-center text-status-velocity-text group-hover:scale-110 group-hover:bg-status-velocity-text group-hover:text-surface-bg transition-all shadow-xs">
+                    <span class="material-symbols-outlined text-[22px]">ssid_chart</span>
+                  </div>
+                  <span class="w-2 h-2 rounded-full bg-status-velocity-text animate-ping"></span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <span class="font-code-stat text-[12px] text-status-velocity-text font-semibold">05</span>
+                    <span class="h-px w-4 bg-status-velocity-text/40"></span>
+                  </div>
+                  <h3 class="font-headline-md text-[18px] font-bold text-on-surface group-hover:text-status-velocity-text transition-colors">Measure & Improve</h3>
+                </div>
+              </div>
+              <p class="font-body-sm text-body-sm text-text-body">You start saving time, reduce costs and we keep optimizing based on real results.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. PRODUCT AUDIT -->
+      <section class="w-full bg-surface-subtle py-24 border-y border-border-slate-subtle/60" id="product-audit">
+        <div class="max-w-[1240px] mx-auto px-6">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+              <div class="space-y-2">
+                <span class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-primary font-bold">PRODUCT AUDIT</span>
+                <h2 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+                  Get a clear view of what's working, what's missing, and what to automate.
+                </h2>
+                <p class="font-body-md text-body-md text-text-body">
+                  A structured audit to understand your product, operations and workflows — and find where AI can create real leverage.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <div class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-bg shadow-sm hover:translate-x-1 transition-transform border border-border-slate-subtle/50">
+                  <span class="material-symbols-outlined text-primary text-[20px]">description</span>
+                  <span class="font-body-sm text-body-sm font-semibold text-on-surface">Product Analysis</span>
+                </div>
+                <div class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-bg shadow-sm hover:translate-x-1 transition-transform border border-border-slate-subtle/50">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">map</span>
+                  <span class="font-body-sm text-body-sm font-semibold text-on-surface">Workflow Mapping</span>
+                </div>
+                <div class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-bg shadow-sm hover:translate-x-1 transition-transform border border-border-slate-subtle/50">
+                  <span class="material-symbols-outlined text-status-friction-text text-[20px]">adjust</span>
+                  <span class="font-body-sm text-body-sm font-semibold text-on-surface">Gap Identification</span>
+                </div>
+                <div class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-bg shadow-sm hover:translate-x-1 transition-transform border border-border-slate-subtle/50">
+                  <span class="material-symbols-outlined text-primary-container text-[20px]">bolt</span>
+                  <span class="font-body-sm text-body-sm font-semibold text-on-surface">Automation Opportunities</span>
+                </div>
+                <div class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-bg shadow-sm hover:translate-x-1 transition-transform border border-border-slate-subtle/50">
+                  <span class="material-symbols-outlined text-status-velocity-text text-[20px]">analytics</span>
+                  <span class="font-body-sm text-body-sm font-semibold text-on-surface">Impact Estimation</span>
+                </div>
+                <div class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-bg shadow-sm hover:translate-x-1 transition-transform border border-border-slate-subtle/50">
+                  <span class="material-symbols-outlined text-on-primary-fixed-variant text-[20px]">checklist</span>
+                  <span class="font-body-sm text-body-sm font-semibold text-on-surface">Implementation Plan</span>
+                </div>
+              </div>
+
+              <div class="pt-2">
+                <a class="h-12 px-6 rounded-lg bg-surface-dark text-surface-bg font-label-badge text-label-badge inline-flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-md group" href="#consultation">
+                  <span>Book a Product Audit</span>
+                  <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7">
+              <div class="relative bg-surface-bg rounded-xl p-6 sm:p-8 shadow-xl space-y-6 border border-border-slate-subtle/80 overflow-hidden">
+                <div class="absolute inset-x-0 h-10 pointer-events-none scanner-active bg-gradient-to-b from-primary/10 via-primary/5 to-transparent border-t border-primary/30 z-20"></div>
+
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border-slate-subtle/60">
+                  <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary">
+                      <span class="material-symbols-outlined text-[20px]">lab_profile</span>
+                    </div>
+                    <div>
+                      <h3 class="font-headline-md text-headline-md font-bold text-on-surface">Product Analysis Report</h3>
+                      <div class="flex items-center gap-1.5 text-[11px] font-code-stat text-status-velocity-text">
+                        <span class="w-1.5 h-1.5 rounded-full bg-status-velocity-text animate-pulse"></span>
+                        LIVE SCANNING: INGESTED 42 WORKFLOW NODES
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center gap-1 p-1 bg-surface-container rounded-lg text-text-muted font-body-sm text-[12px]" id="audit-tabs">
+                    <button data-tab="overview" class="tab-btn px-2.5 py-1 rounded bg-surface-bg text-on-surface font-semibold shadow-xs flex items-center gap-1 transition-all">
+                      <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                      Overview
+                    </button>
+                    <button data-tab="gaps" class="tab-btn px-2.5 py-1 hover:text-on-surface transition-colors">Gaps</button>
+                    <button data-tab="opportunities" class="tab-btn px-2.5 py-1 hover:text-on-surface transition-colors">Opportunities</button>
+                    <button data-tab="impact" class="tab-btn px-2.5 py-1 hover:text-on-surface transition-colors">Impact</button>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center relative z-10" id="tab-content-container">
+                  <div class="md:col-span-7 space-y-3" id="tab-list-content">
+                    <div class="flex items-center justify-between">
+                      <span class="font-label-eyebrow text-label-eyebrow uppercase tracking-wider text-text-muted" id="tab-subheading">Key Opportunities</span>
+                      <span class="font-code-stat text-[11px] text-primary">SYNCING 60fps</span>
+                    </div>
+
+                    <div class="p-3 rounded-lg bg-surface-subtle flex items-center justify-between gap-2 shadow-sm border border-transparent hover:border-primary/30 transition-all">
+                      <div class="flex items-center gap-2 min-w-0">
+                        <span class="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0 animate-pulse">check_circle</span>
+                        <span class="font-body-sm text-body-sm text-on-surface truncate">Automate customer support triage</span>
+                      </div>
+                      <span class="font-label-badge text-[11px] px-2 py-0.5 rounded-full bg-status-velocity-badge text-status-velocity-text font-bold whitespace-nowrap">High Impact</span>
+                    </div>
+
+                    <div class="p-3 rounded-lg bg-surface-subtle flex items-center justify-between gap-2 shadow-sm border border-transparent hover:border-primary/30 transition-all">
+                      <div class="flex items-center gap-2 min-w-0">
+                        <span class="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0">check_circle</span>
+                        <span class="font-body-sm text-body-sm text-on-surface truncate">Auto-generate reports & insights</span>
+                      </div>
+                      <span class="font-label-badge text-[11px] px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold whitespace-nowrap">Medium</span>
+                    </div>
+
+                    <div class="p-3 rounded-lg bg-surface-subtle flex items-center justify-between gap-2 shadow-sm border border-transparent hover:border-primary/30 transition-all">
+                      <div class="flex items-center gap-2 min-w-0">
+                        <span class="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0 animate-pulse">check_circle</span>
+                        <span class="font-body-sm text-body-sm text-on-surface truncate">Sync data across tools automatically</span>
+                      </div>
+                      <span class="font-label-badge text-[11px] px-2 py-0.5 rounded-full bg-status-velocity-badge text-status-velocity-text font-bold whitespace-nowrap">High Impact</span>
+                    </div>
+
+                    <div class="p-3 rounded-lg bg-surface-subtle flex items-center justify-between gap-2 shadow-sm border border-transparent hover:border-primary/30 transition-all">
+                      <div class="flex items-center gap-2 min-w-0">
+                        <span class="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0">check_circle</span>
+                        <span class="font-body-sm text-body-sm text-on-surface truncate">Streamline user onboarding flow</span>
+                      </div>
+                      <span class="font-label-badge text-[11px] px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold whitespace-nowrap">Medium</span>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-5 flex flex-col justify-center p-6 rounded-xl bg-electric-indigo-subtle text-center space-y-4 border border-primary/20 relative overflow-hidden">
+                    <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-primary/10 rounded-full blur-xl pointer-events-none"></div>
+                    <span class="font-label-eyebrow text-label-eyebrow uppercase tracking-wider text-primary font-bold">Estimated Impact</span>
+                    <div class="font-display-hero text-[44px] leading-tight font-extrabold text-primary tracking-tight">
+                      60–70%
+                    </div>
+                    <p class="font-body-sm text-body-sm text-text-body font-medium">
+                      reduction in manual work
+                    </p>
+
+                    <div class="flex items-end justify-center gap-2 h-14 pt-2">
+                      <div class="w-3 bg-primary/30 rounded-t h-4 transition-all duration-700 hover:h-6"></div>
+                      <div class="w-3 bg-primary/50 rounded-t h-6 transition-all duration-700 hover:h-8"></div>
+                      <div class="w-3 bg-primary/70 rounded-t h-9 transition-all duration-700 hover:h-11"></div>
+                      <div class="w-3 bg-primary/90 rounded-t h-12 transition-all duration-700 hover:h-13"></div>
+                      <div class="w-3 bg-primary rounded-t h-14 animate-pulse"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. COMMON USE CASES -->
+      <section class="max-w-[1240px] mx-auto px-6 py-24 space-y-12" id="use-cases">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+          <span class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-primary font-bold">COMMON USE CASES</span>
+          <h2 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+            Where AI can create leverage in your business.
+          </h2>
+          <p class="font-body-md text-body-md text-text-body">
+            These are common areas we find in product and operations teams. Your audit will uncover the specific opportunities for your business.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="p-6 rounded-xl bg-surface-bg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center space-y-3 group cursor-pointer border border-border-slate-subtle/60">
+            <div class="w-12 h-12 rounded-xl bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-colors">
+              <span class="material-symbols-outlined text-[24px]">chat</span>
+            </div>
+            <h3 class="font-headline-md text-[18px] font-bold text-on-surface">Customer Support</h3>
+          </div>
+          <div class="p-6 rounded-xl bg-surface-bg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center space-y-3 group cursor-pointer border border-border-slate-subtle/60">
+            <div class="w-12 h-12 rounded-xl bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-colors">
+              <span class="material-symbols-outlined text-[24px]">settings</span>
+            </div>
+            <h3 class="font-headline-md text-[18px] font-bold text-on-surface">Operations</h3>
+          </div>
+          <div class="p-6 rounded-xl bg-surface-bg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center space-y-3 group cursor-pointer border border-border-slate-subtle/60">
+            <div class="w-12 h-12 rounded-xl bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-colors">
+              <span class="material-symbols-outlined text-[24px]">bar_chart</span>
+            </div>
+            <h3 class="font-headline-md text-[18px] font-bold text-on-surface">Data & Reporting</h3>
+          </div>
+          <div class="p-6 rounded-xl bg-surface-bg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center space-y-3 group cursor-pointer border border-border-slate-subtle/60">
+            <div class="w-12 h-12 rounded-xl bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-colors">
+              <span class="material-symbols-outlined text-[24px]">groups</span>
+            </div>
+            <h3 class="font-headline-md text-[18px] font-bold text-on-surface">CRM & Sales</h3>
+          </div>
+          <div class="p-6 rounded-xl bg-surface-bg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center space-y-3 group cursor-pointer border border-border-slate-subtle/60">
+            <div class="w-12 h-12 rounded-xl bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-colors">
+              <span class="material-symbols-outlined text-[24px]">package_2</span>
+            </div>
+            <h3 class="font-headline-md text-[18px] font-bold text-on-surface">Product & Platform</h3>
+          </div>
+          <div class="p-6 rounded-xl bg-surface-bg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center space-y-3 group cursor-pointer border border-border-slate-subtle/60">
+            <div class="w-12 h-12 rounded-xl bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-colors">
+              <span class="material-symbols-outlined text-[24px]">receipt_long</span>
+            </div>
+            <h3 class="font-headline-md text-[18px] font-bold text-on-surface">Finance & Ops</h3>
+          </div>
+          <div class="p-6 rounded-xl bg-surface-bg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center space-y-3 group cursor-pointer border border-border-slate-subtle/60">
+            <div class="w-12 h-12 rounded-xl bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-colors">
+              <span class="material-symbols-outlined text-[24px]">handshake</span>
+            </div>
+            <h3 class="font-headline-md text-[18px] font-bold text-on-surface">HR & Internal Tools</h3>
+          </div>
+          <div class="p-6 rounded-xl bg-surface-bg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center space-y-3 group cursor-pointer border border-border-slate-subtle/60">
+            <div class="w-12 h-12 rounded-xl bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-colors">
+              <span class="material-symbols-outlined text-[24px]">campaign</span>
+            </div>
+            <h3 class="font-headline-md text-[18px] font-bold text-on-surface">Marketing</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. LEAD CAPTURE & CONSULTATION SECTION -->
+      <section class="w-full bg-surface-subtle py-24 border-t border-border-slate-subtle/60" id="consultation">
+        <div class="max-w-[1240px] mx-auto px-6">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-6 space-y-6">
+              <span class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-primary font-bold">FREE CONSULTATION</span>
+              <h2 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+                Let's find your AI opportunities.
+              </h2>
+              <p class="font-body-lg text-body-lg text-text-body">
+                A 30-minute consultation to understand your product, discuss your challenges and explore <strong class="text-on-surface font-semibold">high-impact</strong> automation opportunities.
+              </p>
+
+              <div class="space-y-3 pt-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-6 h-6 rounded-full bg-status-velocity-bg text-status-velocity-text flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[16px]">check</span>
+                  </div>
+                  <span class="font-body-md text-body-md text-on-surface font-medium">No obligation</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-6 h-6 rounded-full bg-status-velocity-bg text-status-velocity-text flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[16px]">check</span>
+                  </div>
+                  <span class="font-body-md text-body-md text-on-surface font-medium">Strategic discussion</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-6 h-6 rounded-full bg-status-velocity-bg text-status-velocity-text flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[16px]">check</span>
+                  </div>
+                  <span class="font-body-md text-body-md text-on-surface font-medium">Actionable insights</span>
+                </div>
+              </div>
+
+              <div class="pt-4 flex items-center gap-3 text-text-muted font-body-sm text-body-sm">
+                <span class="material-symbols-outlined text-[20px] text-primary">calendar_month</span>
+                <span>Tell us about your business, we'll take it from here.</span>
+              </div>
+            </div>
+
+            <div class="lg:col-span-6">
+              <div class="bg-surface-bg rounded-xl p-8 shadow-xl space-y-6 border border-border-slate-subtle/80">
+                <div class="space-y-1">
+                  <h3 class="font-headline-md text-headline-md font-bold text-on-surface">Book a Free Consultation</h3>
+                  <p class="font-body-sm text-body-sm text-text-muted">Schedule a direct discovery session with our technical leads.</p>
+                </div>
+
+                <form class="space-y-4" id="consultation-form" onsubmit="handleFormSubmit(event)">
+                  <div>
+                    <label class="block font-body-sm text-[13px] font-semibold text-on-surface mb-1" for="full-name">
+                      Name <span class="text-error">*</span>
+                    </label>
+                    <input class="w-full h-11 px-4 rounded-lg bg-surface-subtle text-on-surface placeholder:text-text-muted text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-bg shadow-sm border border-border-slate-subtle" id="full-name" placeholder="Your Name" required="" type="text"/>
+                  </div>
+                  <div>
+                    <label class="block font-body-sm text-[13px] font-semibold text-on-surface mb-1" for="business-email">
+                      Email <span class="text-error">*</span>
+                    </label>
+                    <input class="w-full h-11 px-4 rounded-lg bg-surface-subtle text-on-surface placeholder:text-text-muted text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-bg shadow-sm border border-border-slate-subtle" id="business-email" placeholder="you@company.com" required="" type="email"/>
+                  </div>
+                  <div>
+                    <label class="block font-body-sm text-[13px] font-semibold text-on-surface mb-1" for="phone-number">
+                      Phone Number <span class="text-error">*</span>
+                    </label>
+                    <input class="w-full h-11 px-4 rounded-lg bg-surface-subtle text-on-surface placeholder:text-text-muted text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-bg shadow-sm border border-border-slate-subtle" id="phone-number" placeholder="+1 (555) 000-0000" required="" type="tel"/>
+                  </div>
+                  <div>
+                    <label class="block font-body-sm text-[13px] font-semibold text-on-surface mb-1" for="user-message">
+                      Message <span class="text-text-muted font-normal">(Optional)</span>
+                    </label>
+                    <textarea class="w-full p-4 rounded-lg bg-surface-subtle text-on-surface placeholder:text-text-muted text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-bg shadow-sm resize-none border border-border-slate-subtle" id="user-message" placeholder="Briefly describe your business or what you'd like to automate..." rows="3"></textarea>
+                  </div>
+                  <button class="w-full h-12 rounded-lg bg-surface-dark text-surface-bg font-label-badge text-label-badge inline-flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-md group font-semibold" type="submit">
+                    <span>Book Free Consultation</span>
+                    <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  </button>
+                </form>
+
+                <div class="hidden p-4 rounded-lg bg-status-velocity-bg text-status-velocity-text text-center font-body-sm text-body-sm font-semibold border border-status-velocity-badge" id="form-success">
+                  ✓ Consultation requested. We will reach out within 24 hours with your audit framework.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="max-w-[1240px] mx-auto px-6 py-space-2xl flex flex-col gap-space-xl">
+      <div class="bg-surface-dark rounded-xl p-space-xl shadow-[0_20px_40px_-8px_rgba(9,13,22,0.12)] flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg">
+        <div class="space-y-space-xs">
+          <div class="flex items-center gap-space-xs text-secondary-fixed">
+            <span class="font-code-stat text-code-stat text-primary-fixed">//</span>
+            <span class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-primary-fixed">High Velocity Automation</span>
+          </div>
+          <h3 class="font-headline-lg text-headline-lg text-surface-bg font-bold tracking-tight">Ready to eliminate internal workflow friction?</h3>
+          <p class="font-body-md text-body-md text-slate-400">Schedule an institutional bottleneck audit. Actionable architectural insights in 48 hours.</p>
+        </div>
+        <div class="flex items-center gap-space-md w-full md:w-auto">
+          <a class="h-12 px-6 rounded-lg bg-surface-bg text-surface-dark font-label-badge text-label-badge inline-flex items-center justify-center gap-space-xs hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors shadow-sm w-full md:w-auto font-semibold" data-path="book-an-audit" href="#consultation">
+            <span>Request Audit Spec</span>
+            <span class="material-symbols-outlined text-[18px]">terminal</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-space-xl pt-space-md">
+        <div class="space-y-space-sm">
+          <div class="flex items-center gap-space-xs">
+            <span class="font-code-stat text-code-stat text-primary-container font-bold">//</span>
+            <span class="font-headline-md text-headline-md tracking-tight text-on-surface font-bold">Strafuse</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-text-muted">Architectural AI workflow audits and automated deployment engineering for enterprise ops leaders.</p>
+          <div class="flex items-center gap-space-xs">
+            <span class="inline-flex items-center px-2 py-0.5 rounded-full font-code-stat text-[11px] bg-status-velocity-bg text-status-velocity-text font-semibold">SYSTEM: OPERATIONAL</span>
+          </div>
+        </div>
+
+        <div class="space-y-space-sm">
+          <span class="font-label-eyebrow text-label-eyebrow uppercase tracking-wider text-on-surface font-bold">Practices</span>
+          <ul class="space-y-space-xs font-body-sm text-body-sm">
+            <li class="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="audit" href="#product-audit">Bottleneck Audit</a></li>
+            <li class="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="solutions" href="#how-it-works">Agent Scaffolding</a></li>
+            <li class="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="features" href="#use-cases">Stack Modernization</a></li>
+            <li class="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="solutions" href="#how-it-works">Pipeline Integration</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-space-sm">
+          <span class="font-label-eyebrow text-label-eyebrow uppercase tracking-wider text-on-surface font-bold">Architecture</span>
+          <ul class="space-y-space-xs font-body-sm text-body-sm">
+            <li class="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="features" href="#product-audit">Enterprise LLM Governance</a></li>
+            <li class="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="audit" href="#product-audit">Latency Profiling</a></li>
+            <li class="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="pricing" href="#consultation">Engagement Tiers</a></li>
+            <li class="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="solutions" href="#how-it-works">Case Audits</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-space-sm">
+          <span class="font-label-eyebrow text-label-eyebrow uppercase tracking-wider text-on-surface font-bold">Inquiries</span>
+          <p class="font-body-sm text-body-sm text-text-muted">Direct line to principal automation architects.</p>
+          <div class="font-code-stat text-code-stat text-on-surface font-semibold">advisory@strafuse.internal</div>
+        </div>
+      </div>
+
+      <div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-text-muted border-t border-border-slate-subtle/40">
+        <div class="flex items-center gap-space-xs font-code-stat text-[12px]">
+          <span>© 2025 Strafuse Systems Ltd.</span>
+          <span>•</span>
+          <span>Analytical Rigor Guaranteed</span>
+        </div>
+        <div class="flex items-center gap-space-md text-[13px]">
+          <span class="hover:text-on-surface transition-colors cursor-pointer">Privacy Architecture</span>
+          <span class="hover:text-on-surface transition-colors cursor-pointer">Service Level Agreements</span>
+          <span class="hover:text-on-surface transition-colors cursor-pointer">Security Framework</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header Glassmorphism on Scroll
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('main-header');
+      if (window.scrollY > 40) {
+        header.classList.add('nav-scrolled');
+      } else {
+        header.classList.remove('nav-scrolled');
+      }
+    });
+
+    // Mobile Menu Toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileToggle?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+    }
+
+    // Dynamic Product Analysis Report Tabs Data
+    const tabData = {
+      overview: {
+        title: "Key Opportunities",
+        items: [
+          { text: "Automate customer support triage", tag: "High Impact", tagClass: "bg-status-velocity-badge text-status-velocity-text" },
+          { text: "Auto-generate reports & insights", tag: "Medium", tagClass: "bg-surface-container text-on-surface-variant" },
+          { text: "Sync data across tools automatically", tag: "High Impact", tagClass: "bg-status-velocity-badge text-status-velocity-text" },
+          { text: "Streamline user onboarding flow", tag: "Medium", tagClass: "bg-surface-container text-on-surface-variant" }
+        ]
+      },
+      gaps: {
+        title: "Critical Operational Gaps Identified",
+        items: [
+          { text: "Manual copy-pasting between CSV and CRM", tag: "Critical Friction", tagClass: "bg-status-friction-badge text-status-friction-text" },
+          { text: "Inbound leads waiting > 4 hours for first touch", tag: "Leakage Detected", tagClass: "bg-status-friction-badge text-status-friction-text" },
+          { text: "Siloed customer conversations across Slack & Zendesk", tag: "High Friction", tagClass: "bg-status-friction-badge text-status-friction-text" },
+          { text: "Zero automated regression checks on daily ops", tag: "Moderate Risk", tagClass: "bg-surface-container text-on-surface-variant" }
+        ]
+      },
+      opportunities: {
+        title: "High-Leverage AI Automations",
+        items: [
+          { text: "Zero-touch autonomous lead enricher & qualification", tag: "High ROI", tagClass: "bg-status-velocity-badge text-status-velocity-text" },
+          { text: "Self-healing data synchronization agent across DB & CRM", tag: "99.8% Accuracy", tagClass: "bg-status-velocity-badge text-status-velocity-text" },
+          { text: "Multi-modal invoice & document OCR parser", tag: "Hours Saved: 14/wk", tagClass: "bg-status-velocity-badge text-status-velocity-text" },
+          { text: "Proactive churn prediction agent sending Slack alerts", tag: "Strategic", tagClass: "bg-primary-fixed text-on-primary-fixed" }
+        ]
+      },
+      impact: {
+        title: "Projected Velocity Gains",
+        items: [
+          { text: "18.5 hours saved per operator each week", tag: "Verified", tagClass: "bg-status-velocity-badge text-status-velocity-text" },
+          { text: "94.8% reduction in manual data entry errors", tag: "Measured", tagClass: "bg-status-velocity-badge text-status-velocity-text" },
+          { text: "Response time dropped from 4 hours to < 30 seconds", tag: "8x Speedup", tagClass: "bg-status-velocity-badge text-status-velocity-text" },
+          { text: "Payback timeline under 21 calendar days", tag: "Capital Efficient", tagClass: "bg-status-velocity-badge text-status-velocity-text" }
+        ]
+      }
+    };
+
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabListContent = document.getElementById('tab-list-content');
+    const tabSubheading = document.getElementById('tab-subheading');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabKey = btn.getAttribute('data-tab');
+        
+        tabButtons.forEach(b => {
+          b.className = "tab-btn px-2.5 py-1 hover:text-on-surface transition-colors";
+          const dot = b.querySelector('span');
+          if (dot) dot.remove();
+        });
+
+        btn.className = "tab-btn px-2.5 py-1 rounded bg-surface-bg text-on-surface font-semibold shadow-xs flex items-center gap-1 transition-all";
+        const dot = document.createElement('span');
+        dot.className = "w-1.5 h-1.5 rounded-full bg-primary animate-pulse";
+        btn.prepend(dot);
+
+        const data = tabData[tabKey];
+        if (!data) return;
+
+        tabSubheading.textContent = data.title;
+        
+        let html = `
+          <div class="flex items-center justify-between">
+            <span class="font-label-eyebrow text-label-eyebrow uppercase tracking-wider text-text-muted">${data.title}</span>
+            <span class="font-code-stat text-[11px] text-primary">SYNCING 60fps</span>
+          </div>
+        `;
+
+        data.items.forEach(item => {
+          html += `
+            <div class="p-3 rounded-lg bg-surface-subtle flex items-center justify-between gap-2 shadow-sm border border-transparent hover:border-primary/30 transition-all">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0 animate-pulse">check_circle</span>
+                <span class="font-body-sm text-body-sm text-on-surface truncate">${item.text}</span>
+              </div>
+              <span class="font-label-badge text-[11px] px-2 py-0.5 rounded-full ${item.tagClass} font-bold whitespace-nowrap">${item.tag}</span>
+            </div>
+          `;
+        });
+
+        tabListContent.innerHTML = html;
+      });
+    });
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('consultation-form');
+      const success = document.getElementById('form-success');
+      
+      success.classList.remove('hidden');
+      form.reset();
+      success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+</body>
+</html>
