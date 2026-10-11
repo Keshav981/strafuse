@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
+/* 1. Core Resets & Fonts */
 @layer base {
   html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   body {
     overscroll-behavior: none;
+    background-color: #faf9ff;
+    color: #334155;
   }
   main > :first-child {
     margin-top: 0 !important;
@@ -20,13 +24,140 @@
   display: none;
 }
 
-/* Kinetic Workflow Diagram Animations */
+/* 2. Color Utility Tokens */
+.bg-surface { background-color: #faf9ff !important; }
+.bg-surface-bg { background-color: #FFFFFF !important; }
+.bg-surface-subtle { background-color: #F8FAFC !important; }
+.bg-surface-dark { background-color: #090D16 !important; }
+.bg-surface-dark-card { background-color: #0F172A !important; }
+.bg-surface-container { background-color: #ebedfb !important; }
+.bg-surface-container-low { background-color: #f1f3ff !important; }
+.bg-surface-container-highest { background-color: #dfe2ef !important; }
+.bg-electric-indigo-subtle { background-color: #EEF2FF !important; }
+.bg-status-velocity-bg { background-color: #ECFDF5 !important; }
+.bg-status-velocity-badge { background-color: #D1FAE5 !important; }
+.bg-status-friction-bg { background-color: #FFF1F2 !important; }
+.bg-status-friction-badge { background-color: #FFE4E6 !important; }
+.bg-primary { background-color: #3525cd !important; }
+.bg-primary-container { background-color: #4f46e5 !important; }
+.bg-primary-fixed { background-color: #e2dfff !important; }
+.bg-secondary-fixed { background-color: #d8e2ff !important; }
+
+.text-body { color: #334155 !important; }
+.text-text-body { color: #334155 !important; }
+.text-text-muted { color: #64748B !important; }
+.text-on-surface { color: #181b25 !important; }
+.text-on-surface-variant { color: #464555 !important; }
+.text-surface-bg { color: #FFFFFF !important; }
+.text-surface-dark { color: #090D16 !important; }
+.text-primary { color: #3525cd !important; }
+.text-secondary { color: #0058be !important; }
+.text-status-velocity-text { color: #059669 !important; }
+.text-status-friction-text { color: #E11D48 !important; }
+.text-tertiary-fixed { color: #6ffbbe !important; }
+.text-tertiary-container { color: #006e4b !important; }
+.text-primary-fixed { color: #e2dfff !important; }
+.text-secondary-fixed { color: #d8e2ff !important; }
+.text-on-primary-fixed { color: #0f0069 !important; }
+.text-on-primary-fixed-variant { color: #3323cc !important; }
+.text-outline-variant { color: #c7c4d8 !important; }
+.text-error { color: #ba1a1a !important; }
+
+.border-border-slate-subtle { border-color: #E2E8F0 !important; }
+.border-border-slate-medium { border-color: #CBD5E1 !important; }
+.border-border-slate-dark { border-color: #1E293B !important; }
+.border-status-friction-badge { border-color: #FFE4E6 !important; }
+.border-status-velocity-badge { border-color: #D1FAE5 !important; }
+
+/* 3. Typography Utility Classes */
+.font-display-hero {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+}
+.font-headline-xl {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 40px !important;
+  line-height: 48px !important;
+  letter-spacing: -0.025em !important;
+  font-weight: 700 !important;
+}
+.font-headline-lg {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 28px !important;
+  line-height: 36px !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+}
+.font-headline-md {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 20px !important;
+  line-height: 28px !important;
+  letter-spacing: -0.015em !important;
+  font-weight: 600 !important;
+}
+.font-body-lg {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 18px !important;
+  line-height: 28px !important;
+  letter-spacing: -0.01em !important;
+}
+.font-body-md {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 15px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.005em !important;
+}
+.font-body-sm {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 13px !important;
+  line-height: 20px !important;
+}
+.font-label-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  letter-spacing: 0.01em !important;
+  font-weight: 600 !important;
+}
+.font-label-eyebrow {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 11px !important;
+  line-height: 16px !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 700 !important;
+}
+.font-code-stat {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 600 !important;
+}
+
+/* 4. Spacing Utilities */
+.gap-space-xs { gap: 0.25rem !important; }
+.gap-space-sm { gap: 0.5rem !important; }
+.gap-space-md { gap: 1rem !important; }
+.gap-space-lg { gap: 1.5rem !important; }
+.gap-space-xl { gap: 2.5rem !important; }
+.gap-space-2xl { gap: 4rem !important; }
+
+.p-space-xl { padding: 2.5rem !important; }
+.py-space-2xl { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+.pt-space-md { padding-top: 1rem !important; }
+.pt-space-lg { padding-top: 1.5rem !important; }
+
+.space-y-space-xs > :not([hidden]) ~ :not([hidden]) { margin-top: 0.25rem !important; }
+.space-y-space-sm > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem !important; }
+.space-y-space-md > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem !important; }
+
+/* 5. Keyframe Animations */
 @keyframes flowDash {
   to {
     stroke-dashoffset: -32;
   }
 }
-
 @keyframes pulseGlow {
   0%, 100% {
     transform: scale(1);
@@ -39,26 +170,22 @@
     box-shadow: 0 0 28px rgba(79, 70, 229, 0.8), 0 0 45px rgba(5, 150, 105, 0.4);
   }
 }
-
 @keyframes scannerBar {
   0% { transform: translateY(-100%); opacity: 0; }
   25% { opacity: 0.6; }
   75% { opacity: 0.6; }
   100% { transform: translateY(320px); opacity: 0; }
 }
-
 @keyframes particleTravelHorizontal {
   0% { transform: translateX(0); opacity: 0; }
   15% { opacity: 1; }
   85% { opacity: 1; }
   100% { transform: translateX(100%); opacity: 0; }
 }
-
 @keyframes gentleFloat {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-5px); }
 }
-
 @keyframes kineticShimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
@@ -68,37 +195,31 @@
   stroke-dasharray: 6 6;
   animation: flowDash 1.2s linear infinite;
 }
-
 .flow-line-fast {
   stroke-dasharray: 4 4;
   animation: flowDash 0.8s linear infinite;
 }
-
 .pulse-bridge {
   animation: pulseGlow 3s ease-in-out infinite;
 }
-
 .scanner-active {
   animation: scannerBar 3.5s ease-in-out infinite;
 }
-
 .float-card {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
-
 .float-card:hover {
   transform: translateY(-4px);
 }
-
 .kinetic-border {
   background: linear-gradient(90deg, #4f46e5 0%, #059669 50%, #4f46e5 100%);
   background-size: 200% 100%;
   animation: kineticShimmer 4s linear infinite;
 }
-
 .nav-scrolled {
   background-color: rgba(9, 13, 22, 0.85) !important;
   backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3) !important;
 }
