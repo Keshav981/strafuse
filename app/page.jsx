@@ -95,40 +95,40 @@ export default function Home() {
           scrolled ? "nav-scrolled" : "bg-transparent"
         }`}
       >
-        <div className="h-20 max-w-[1240px] mx-auto px-6 flex items-center justify-between gap-space-lg">
-          <a className="flex items-center gap-space-xs group" data-path="home" href="#">
-            <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center font-code-stat text-code-stat text-white group-hover:bg-white group-hover:text-primary transition-all font-bold">
+        <div className="h-16 sm:h-20 max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-4">
+          <a className="flex items-center gap-2.5 group shrink-0" data-path="home" href="#">
+            <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center font-mono text-sm text-white group-hover:bg-white group-hover:text-primary transition-all font-bold">
               S
             </div>
-            <span className="font-headline-md text-headline-md tracking-tight text-white font-bold drop-shadow-sm">
+            <span className="text-xl sm:text-2xl tracking-tight text-white font-bold drop-shadow-sm">
               Strafuse
             </span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             <a
-              className="text-white/85 hover:text-white transition-colors font-body-md text-body-md drop-shadow-sm font-medium"
+              className="text-white/85 hover:text-white transition-colors text-sm font-medium drop-shadow-sm"
               data-path="features"
               href="#how-it-works"
             >
               How It Works
             </a>
             <a
-              className="text-white/85 hover:text-white transition-colors font-body-md text-body-md drop-shadow-sm font-medium"
+              className="text-white/85 hover:text-white transition-colors text-sm font-medium drop-shadow-sm"
               data-path="solutions"
               href="#product-audit"
             >
               Product Audit
             </a>
             <a
-              className="text-white/85 hover:text-white transition-colors font-body-md text-body-md drop-shadow-sm font-medium"
+              className="text-white/85 hover:text-white transition-colors text-sm font-medium drop-shadow-sm"
               data-path="audit"
               href="#use-cases"
             >
               Use Cases
             </a>
             <a
-              className="text-white/85 hover:text-white transition-colors font-body-md text-body-md drop-shadow-sm font-medium"
+              className="text-white/85 hover:text-white transition-colors text-sm font-medium drop-shadow-sm"
               data-path="pricing"
               href="#consultation"
             >
@@ -136,15 +136,15 @@ export default function Home() {
             </a>
           </nav>
 
-          <div className="flex items-center gap-space-md">
+          <div className="flex items-center gap-3">
             <a
-              className="hidden sm:inline-flex text-white/90 hover:text-white font-body-md text-body-md font-medium transition-colors drop-shadow-sm"
+              className="hidden sm:inline-flex text-white/90 hover:text-white text-sm font-medium transition-colors drop-shadow-sm"
               href="#consultation"
             >
               Sign in
             </a>
             <a
-              className="h-11 px-6 rounded-full bg-white text-surface-dark font-label-badge text-[14px] inline-flex items-center justify-center hover:bg-white/90 transition-all shadow-[0_4px_18px_rgba(0,0,0,0.12)] font-semibold group"
+              className="h-9 sm:h-11 px-4 sm:px-6 rounded-full bg-white text-surface-dark text-xs sm:text-sm inline-flex items-center justify-center hover:bg-white/90 transition-all shadow-md font-semibold shrink-0"
               data-path="book-an-audit"
               href="#consultation"
             >
@@ -153,43 +153,55 @@ export default function Home() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle Mobile Menu"
-              className="md:hidden text-white p-2 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-md"
+              className="lg:hidden text-white p-1.5 sm:p-2 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-md transition-colors"
             >
-              <span className="material-symbols-outlined text-[24px]">menu</span>
+              <span className="material-symbols-outlined text-2xl">
+                {mobileMenuOpen ? "close" : "menu"}
+              </span>
             </button>
           </div>
         </div>
 
+        {/* MOBILE MENU DROPDOWN */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-surface-dark/95 backdrop-blur-xl border-b border-border-slate-dark px-6 py-6 space-y-4">
+          <div className="lg:hidden bg-surface-dark/95 backdrop-blur-2xl border-b border-border-slate-dark px-6 py-6 space-y-4 shadow-2xl">
             <a
-              className="block text-white/90 hover:text-white font-body-md"
+              className="block text-white/90 hover:text-white text-base font-medium py-1"
               href="#how-it-works"
               onClick={() => setMobileMenuOpen(false)}
             >
               How It Works
             </a>
             <a
-              className="block text-white/90 hover:text-white font-body-md"
+              className="block text-white/90 hover:text-white text-base font-medium py-1"
               href="#product-audit"
               onClick={() => setMobileMenuOpen(false)}
             >
               Product Audit
             </a>
             <a
-              className="block text-white/90 hover:text-white font-body-md"
+              className="block text-white/90 hover:text-white text-base font-medium py-1"
               href="#use-cases"
               onClick={() => setMobileMenuOpen(false)}
             >
               Use Cases
             </a>
             <a
-              className="block text-white/90 hover:text-white font-body-md"
+              className="block text-white/90 hover:text-white text-base font-medium py-1"
               href="#consultation"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Book an Audit
+              Pricing & Consultation
             </a>
+            <div className="pt-2 border-t border-white/10 flex flex-col gap-3">
+              <a
+                className="w-full h-11 rounded-lg bg-primary text-white text-sm font-semibold flex items-center justify-center shadow-sm"
+                href="#consultation"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Book an AI Audit
+              </a>
+            </div>
           </div>
         )}
       </header>
@@ -197,7 +209,7 @@ export default function Home() {
       <main className="w-full bg-surface flex-1">
         <div className="flex flex-col w-full">
           {/* 1. HIGH ALTITUDE SKY HERO SECTION */}
-          <div className="relative w-full overflow-hidden bg-[#258bf5] min-h-[820px] lg:min-h-[960px] flex flex-col justify-between">
+          <div className="relative w-full overflow-hidden bg-[#258bf5] min-h-[680px] sm:min-h-[820px] lg:min-h-[960px] flex flex-col justify-between">
             <img
               alt="High altitude blue sky with soft white clouds"
               className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
@@ -205,134 +217,139 @@ export default function Home() {
             />
 
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-blue-900/20 via-transparent to-surface/90"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none z-10"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-44 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none z-10"></div>
 
-            <div className="relative z-20 max-w-[1240px] mx-auto px-6 pt-36 md:pt-44 flex flex-col items-center text-center">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/35 shadow-sm mb-6">
+            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-36 lg:pt-40 flex flex-col items-center text-center">
+              {/* Eyebrow Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/35 shadow-sm mb-4 sm:mb-6">
                 <span className="w-2 h-2 rounded-full bg-white"></span>
-                <span className="font-label-eyebrow text-label-eyebrow text-white uppercase tracking-wider font-semibold">
+                <span className="text-xs font-semibold uppercase tracking-wider text-white">
                   AI Workflow Audit & Automation Consultancy
                 </span>
               </div>
 
-              <h1 className="font-display-hero text-[42px] sm:text-[54px] lg:text-[72px] leading-[1.08] text-white tracking-tight font-extrabold max-w-4xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.18)]">
+              {/* Main Headline */}
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] max-w-4xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.18)]">
                 Turn manual work into your <br className="hidden sm:inline" />
                 biggest advantage.
               </h1>
 
-              <p className="font-body-lg text-[17px] sm:text-[20px] leading-relaxed text-white/95 max-w-2xl mt-5 drop-shadow-[0_1px_4px_rgba(0,0,0,0.15)] font-normal">
+              {/* Subheadline */}
+              <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-white/95 max-w-2xl mt-4 sm:mt-5 drop-shadow-[0_1px_4px_rgba(0,0,0,0.15)] font-normal">
                 We audit your product and operations, find what&apos;s slowing you down, and build AI automation to save time, reduce costs, and unlock growth.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-8">
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-6 sm:pt-8 w-full sm:w-auto">
                 <a
-                  className="h-12 px-8 rounded-full bg-white text-surface-dark font-label-badge text-[14px] inline-flex items-center justify-center font-bold hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_10px_25px_-5px_rgba(0,0,0,0.2)] group"
+                  className="w-full sm:w-auto h-12 px-7 rounded-full bg-white text-surface-dark text-sm sm:text-base inline-flex items-center justify-center font-bold hover:bg-white/90 hover:scale-[1.01] active:scale-[0.99] transition-all shadow-lg group"
                   href="#consultation"
                 >
                   <span>Book an AI Workflow Audit</span>
-                  <span className="material-symbols-outlined text-[18px] ml-1.5 group-hover:translate-x-0.5 transition-transform">
+                  <span className="material-symbols-outlined text-lg ml-1.5 group-hover:translate-x-0.5 transition-transform">
                     arrow_forward
                   </span>
                 </a>
                 <a
-                  className="h-12 px-8 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/40 font-label-badge text-[14px] inline-flex items-center justify-center font-semibold transition-all shadow-sm"
+                  className="w-full sm:w-auto h-12 px-7 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/40 text-sm sm:text-base inline-flex items-center justify-center font-semibold transition-all shadow-sm"
                   href="#how-it-works"
                 >
                   <span>See How It Works</span>
                 </a>
               </div>
 
-              <p className="text-white/80 font-body-sm text-[13px] pt-4 tracking-wide drop-shadow-xs">
+              {/* Trust Subtext */}
+              <p className="text-white/85 text-xs sm:text-sm pt-4 tracking-wide">
                 No generic templates • Built around your business • From audit to implementation
               </p>
 
               {/* Floating Modern Dashboard Mockup */}
-              <div className="w-full max-w-[1140px] mt-12 sm:mt-16 relative z-30 transition-all">
-                <div className="rounded-t-[28px] bg-surface-bg/95 backdrop-blur-xl border-t border-x border-white/90 shadow-[0_-15px_40px_rgba(15,23,42,0.12),0_25px_60px_rgba(0,0,0,0.08)] overflow-hidden">
+              <div className="w-full max-w-6xl mt-8 sm:mt-12 lg:mt-16 relative z-30 transition-all">
+                <div className="rounded-t-2xl sm:rounded-t-[28px] bg-surface-bg/95 backdrop-blur-xl border-t border-x border-white/90 shadow-[0_-15px_40px_rgba(15,23,42,0.12),0_25px_60px_rgba(0,0,0,0.08)] overflow-hidden">
                   {/* Top Bar */}
-                  <div className="px-6 py-3.5 bg-surface-subtle/90 border-b border-border-slate-subtle/80 flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
+                  <div className="px-4 sm:px-6 py-3 bg-surface-subtle/90 border-b border-border-slate-subtle/80 flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-2.5 sm:gap-3">
                       <div className="flex items-center gap-1.5">
-                        <span className="w-3 h-3 rounded-full bg-[#ff5f56]/80 inline-block"></span>
-                        <span className="w-3 h-3 rounded-full bg-[#ffbd2e]/80 inline-block"></span>
-                        <span className="w-3 h-3 rounded-full bg-[#27c93f]/80 inline-block"></span>
+                        <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#ff5f56]/80 inline-block"></span>
+                        <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#ffbd2e]/80 inline-block"></span>
+                        <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#27c93f]/80 inline-block"></span>
                       </div>
-                      <div className="h-4 w-px bg-border-slate-medium/60 mx-1"></div>
-                      <div className="flex items-center gap-2 px-2.5 py-1 rounded-md bg-surface-bg border border-border-slate-subtle shadow-xs">
-                        <span className="font-code-stat text-[11px] text-primary font-bold">//</span>
-                        <span className="font-body-sm text-[12px] font-semibold text-on-surface">
+                      <div className="h-4 w-px bg-border-slate-medium/60 mx-1 hidden sm:block"></div>
+                      <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-2.5 py-1 rounded-md bg-surface-bg border border-border-slate-subtle shadow-xs">
+                        <span className="font-mono text-xs text-primary font-bold">//</span>
+                        <span className="text-xs sm:text-sm font-semibold text-on-surface">
                           Strafuse Live Workspace
                         </span>
-                        <span className="material-symbols-outlined text-[16px] text-text-muted">
+                        <span className="material-symbols-outlined text-sm text-text-muted hidden sm:inline">
                           unfold_more
                         </span>
                       </div>
                     </div>
 
-                    <div className="hidden md:flex items-center gap-2 text-[12px] font-body-sm text-text-muted">
+                    <div className="hidden md:flex items-center gap-2 text-xs text-text-muted font-medium">
                       <span>Workflow Intelligence</span>
                       <span>/</span>
                       <span className="text-on-surface font-semibold">
                         Institutional Velocity Audit
                       </span>
-                      <span className="inline-flex items-center gap-1 ml-2 px-2 py-0.5 rounded-full bg-status-velocity-bg text-status-velocity-text font-code-stat text-[10px] font-semibold">
+                      <span className="inline-flex items-center gap-1 ml-2 px-2 py-0.5 rounded-full bg-status-velocity-bg text-status-velocity-text font-mono text-xs font-semibold">
                         <span className="w-1.5 h-1.5 rounded-full bg-status-velocity-text"></span>
                         60 FPS STREAM
                       </span>
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <div className="hidden sm:flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-bg border border-border-slate-subtle text-text-muted text-[12px]">
-                        <span className="material-symbols-outlined text-[15px]">calendar_today</span>
+                      <div className="hidden sm:flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-bg border border-border-slate-subtle text-text-muted text-xs">
+                        <span className="material-symbols-outlined text-sm">calendar_today</span>
                         <span>Last 30 Days</span>
                       </div>
                       <a
                         href="#consultation"
-                        className="px-2.5 py-1 rounded-md bg-primary text-white text-[12px] font-semibold flex items-center gap-1 hover:bg-primary/90 transition-colors"
+                        className="px-2.5 py-1 rounded-md bg-primary text-white text-xs font-semibold flex items-center gap-1 hover:bg-primary/90 transition-colors"
                       >
-                        <span className="material-symbols-outlined text-[15px]">share</span>
+                        <span className="material-symbols-outlined text-sm">share</span>
                         <span className="hidden sm:inline">Export Audit</span>
                       </a>
                     </div>
                   </div>
 
                   {/* Dashboard Metrics */}
-                  <div className="p-6 md:p-8 bg-surface-bg space-y-6">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      <div className="p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
-                        <div className="font-body-sm text-[12px] text-text-muted font-medium">Weekly Bottlenecks</div>
-                        <div className="font-headline-lg text-[24px] font-bold text-status-friction-text mt-1 flex items-baseline gap-2">
+                  <div className="p-4 sm:p-6 lg:p-8 bg-surface-bg space-y-6">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
+                        <div className="text-xs text-text-muted font-medium">Weekly Bottlenecks</div>
+                        <div className="text-xl sm:text-2xl font-bold font-mono text-status-friction-text mt-1 flex items-baseline gap-1.5">
                           <span>-72%</span>
-                          <span className="text-[11px] font-normal text-text-muted">eliminated</span>
+                          <span className="text-xs font-normal text-text-muted">eliminated</span>
                         </div>
-                        <div className="text-[11px] text-text-muted mt-1 font-code-stat">Audit Spec v4.2</div>
+                        <div className="text-xs text-text-muted mt-1 font-mono">Audit Spec v4.2</div>
                       </div>
 
-                      <div className="p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
-                        <div className="font-body-sm text-[12px] text-text-muted font-medium">Time Reclaimed / Week</div>
-                        <div className="font-headline-lg text-[24px] font-bold text-status-velocity-text mt-1 flex items-baseline gap-2">
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
+                        <div className="text-xs text-text-muted font-medium">Time Reclaimed / Week</div>
+                        <div className="text-xl sm:text-2xl font-bold font-mono text-status-velocity-text mt-1 flex items-baseline gap-1.5">
                           <span>18.5 hrs</span>
-                          <span className="text-[11px] font-normal text-status-velocity-text">/ operator</span>
+                          <span className="text-xs font-normal text-status-velocity-text">/ operator</span>
                         </div>
-                        <div className="text-[11px] text-text-muted mt-1 font-code-stat">Measured in real-time</div>
+                        <div className="text-xs text-text-muted mt-1 font-mono">Measured in real-time</div>
                       </div>
 
-                      <div className="p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
-                        <div className="font-body-sm text-[12px] text-text-muted font-medium">Autonomous Execution</div>
-                        <div className="font-headline-lg text-[24px] font-bold text-primary mt-1 flex items-baseline gap-2">
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
+                        <div className="text-xs text-text-muted font-medium">Autonomous Execution</div>
+                        <div className="text-xl sm:text-2xl font-bold font-mono text-primary mt-1 flex items-baseline gap-1.5">
                           <span>94.8%</span>
-                          <span className="text-[11px] font-normal text-text-muted">zero-touch</span>
+                          <span className="text-xs font-normal text-text-muted">zero-touch</span>
                         </div>
-                        <div className="text-[11px] text-text-muted mt-1 font-code-stat">Agent pipeline</div>
+                        <div className="text-xs text-text-muted mt-1 font-mono">Agent pipeline</div>
                       </div>
 
-                      <div className="p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
-                        <div className="font-body-sm text-[12px] text-text-muted font-medium">Workflow Throughput</div>
-                        <div className="font-headline-lg text-[24px] font-bold text-on-surface mt-1 flex items-baseline gap-2">
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
+                        <div className="text-xs text-text-muted font-medium">Workflow Throughput</div>
+                        <div className="text-xl sm:text-2xl font-bold font-mono text-on-surface mt-1 flex items-baseline gap-1.5">
                           <span>4.6x</span>
-                          <span className="text-[11px] font-normal text-status-velocity-text">velocity</span>
+                          <span className="text-xs font-normal text-status-velocity-text">velocity</span>
                         </div>
-                        <div className="text-[11px] text-text-muted mt-1 font-code-stat">Production verified</div>
+                        <div className="text-xs text-text-muted mt-1 font-mono">Production verified</div>
                       </div>
                     </div>
 
@@ -378,174 +395,173 @@ export default function Home() {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch text-left">
                         {/* BEFORE */}
-                        <div className="bg-surface-subtle rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between border border-status-friction-badge/60 relative overflow-hidden group">
+                        <div className="bg-surface-subtle rounded-xl p-4 sm:p-5 shadow-sm space-y-4 flex flex-col justify-between border border-status-friction-badge/60 relative overflow-hidden group">
                           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-status-friction-text/40 to-transparent"></div>
                           <div>
                             <div className="flex items-center justify-between pb-3">
                               <div className="flex items-center gap-2">
-                                <span className="px-2.5 py-1 rounded-full bg-status-friction-badge text-status-friction-text font-label-badge text-label-badge uppercase tracking-wider">
+                                <span className="px-2.5 py-1 rounded-full bg-status-friction-badge text-status-friction-text text-xs uppercase tracking-wider font-semibold">
                                   Before
                                 </span>
-                                <span className="inline-flex items-center gap-1 text-[11px] font-code-stat text-status-friction-text">
+                                <span className="inline-flex items-center gap-1 text-xs font-mono text-status-friction-text font-medium">
                                   <span className="w-1.5 h-1.5 rounded-full bg-status-friction-text"></span>
                                   Bottlenecks
                                 </span>
                               </div>
-                              <span className="material-symbols-outlined text-outline-variant text-[18px]">
+                              <span className="material-symbols-outlined text-outline-variant text-lg">
                                 history
                               </span>
                             </div>
                             <div className="space-y-2.5">
-                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm hover:bg-status-friction-bg/30 transition-all">
+                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm border border-border-slate-subtle/40">
                                 <div className="flex items-center gap-2 min-w-0">
-                                  <span className="material-symbols-outlined text-text-muted text-[18px]">mail</span>
-                                  <span className="font-body-sm text-body-sm text-on-surface truncate">
+                                  <span className="material-symbols-outlined text-text-muted text-base shrink-0">mail</span>
+                                  <span className="text-xs sm:text-sm text-on-surface truncate">
                                     Leads scattered across inboxes
                                   </span>
                                 </div>
-                                <span className="font-code-stat text-[11px] px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold flex items-center gap-1">
-                                  <span className="w-1 h-1 rounded-full bg-status-friction-text"></span>
+                                <span className="font-mono text-xs px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold shrink-0">
                                   120+/day
                                 </span>
                               </div>
-                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm hover:bg-status-friction-bg/30 transition-all">
+                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm border border-border-slate-subtle/40">
                                 <div className="flex items-center gap-2 min-w-0">
-                                  <span className="material-symbols-outlined text-text-muted text-[18px]">person</span>
-                                  <span className="font-body-sm text-body-sm text-on-surface truncate">
+                                  <span className="material-symbols-outlined text-text-muted text-base shrink-0">person</span>
+                                  <span className="text-xs sm:text-sm text-on-surface truncate">
                                     Manual follow-ups & drafting
                                   </span>
                                 </div>
-                                <span className="font-code-stat text-[11px] px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold">
+                                <span className="font-mono text-xs px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold shrink-0">
                                   3-4 hrs/day
                                 </span>
                               </div>
-                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm hover:bg-status-friction-bg/30 transition-all">
+                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm border border-border-slate-subtle/40">
                                 <div className="flex items-center gap-2 min-w-0">
-                                  <span className="material-symbols-outlined text-text-muted text-[18px]">content_copy</span>
-                                  <span className="font-body-sm text-body-sm text-on-surface truncate">
+                                  <span className="material-symbols-outlined text-text-muted text-base shrink-0">content_copy</span>
+                                  <span className="text-xs sm:text-sm text-on-surface truncate">
                                     Copy-pasting CSVs to CRM
                                   </span>
                                 </div>
-                                <span className="font-code-stat text-[11px] px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold">
+                                <span className="font-mono text-xs px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold shrink-0">
                                   2 hrs/day
                                 </span>
                               </div>
-                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm hover:bg-status-friction-bg/30 transition-all">
+                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm border border-border-slate-subtle/40">
                                 <div className="flex items-center gap-2 min-w-0">
-                                  <span className="material-symbols-outlined text-text-muted text-[18px]">sync</span>
-                                  <span className="font-body-sm text-body-sm text-on-surface truncate">
+                                  <span className="material-symbols-outlined text-text-muted text-base shrink-0">sync</span>
+                                  <span className="text-xs sm:text-sm text-on-surface truncate">
                                     Updating disjointed tools manually
                                   </span>
                                 </div>
-                                <span className="font-code-stat text-[11px] px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold">
+                                <span className="font-mono text-xs px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold shrink-0">
                                   1-2 hrs/day
                                 </span>
                               </div>
                             </div>
                           </div>
 
-                          <div className="mt-3 p-3 rounded-lg bg-status-friction-bg text-status-friction-text flex items-center gap-3 border border-status-friction-badge/50">
+                          <div className="mt-2 p-3 rounded-lg bg-status-friction-bg text-status-friction-text flex items-center gap-3 border border-status-friction-badge/50">
                             <div className="w-8 h-8 rounded-full bg-status-friction-badge flex items-center justify-center shrink-0">
-                              <span className="material-symbols-outlined text-status-friction-text text-[18px]">
+                              <span className="material-symbols-outlined text-status-friction-text text-base">
                                 timer_off
                               </span>
                             </div>
                             <div className="leading-tight">
-                              <div className="font-headline-md text-[16px] font-bold">8–15 hours / week</div>
-                              <div className="font-body-sm text-[12px] opacity-90">spent on manual repetitive toil</div>
+                              <div className="text-sm font-bold">18.5 hours lost</div>
+                              <div className="text-xs opacity-90">per person weekly on repetitive admin</div>
                             </div>
                           </div>
                         </div>
 
                         {/* Bridge Badge */}
-                        <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex-col items-center justify-center p-2.5 rounded-xl bg-surface-dark text-surface-bg shadow-2xl text-center w-32 border border-primary/40">
+                        <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex-col items-center justify-center p-2.5 rounded-xl bg-surface-dark text-surface-bg shadow-2xl text-center w-36 border border-primary/40">
                           <div className="flex items-center gap-1 mb-0.5">
-                            <span className="font-code-stat text-[12px] text-tertiary-fixed font-bold">//</span>
+                            <span className="font-mono text-xs text-tertiary-fixed font-bold">//</span>
                             <span className="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
                           </div>
-                          <span className="font-label-eyebrow text-[10px] leading-tight text-slate-300 font-semibold">
+                          <span className="text-xs leading-tight text-slate-300 font-semibold">
                             We find, automate and streamline this
                           </span>
-                          <div className="flex items-center gap-1 mt-1 text-[9px] text-tertiary-fixed font-code-stat">
-                            <span className="material-symbols-outlined text-[12px]">autorenew</span>
+                          <div className="flex items-center gap-1 mt-1 text-xs text-tertiary-fixed font-mono font-semibold">
+                            <span className="material-symbols-outlined text-xs">autorenew</span>
                             <span>AUTOMATING</span>
                           </div>
                         </div>
 
                         {/* AFTER */}
-                        <div className="bg-surface-subtle rounded-xl p-5 shadow-md space-y-4 flex flex-col justify-between border border-status-velocity-badge/80 relative overflow-hidden group">
+                        <div className="bg-surface-subtle rounded-xl p-4 sm:p-5 shadow-sm space-y-4 flex flex-col justify-between border border-status-velocity-badge/80 relative overflow-hidden group">
                           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-status-velocity-text"></div>
                           <div>
                             <div className="flex items-center justify-between pb-3">
                               <div className="flex items-center gap-2">
-                                <span className="px-2.5 py-1 rounded-full bg-status-velocity-badge text-status-velocity-text font-label-badge text-label-badge uppercase tracking-wider">
+                                <span className="px-2.5 py-1 rounded-full bg-status-velocity-badge text-status-velocity-text text-xs uppercase tracking-wider font-semibold">
                                   After
                                 </span>
-                                <span className="inline-flex items-center gap-1 text-[11px] font-code-stat text-status-velocity-text">
+                                <span className="inline-flex items-center gap-1 text-xs font-mono text-status-velocity-text font-medium">
                                   <span className="w-1.5 h-1.5 rounded-full bg-status-velocity-text"></span>
                                   Real-time Flow
                                 </span>
                               </div>
-                              <span className="material-symbols-outlined text-tertiary-container text-[18px]">
+                              <span className="material-symbols-outlined text-tertiary-container text-lg">
                                 verified
                               </span>
                             </div>
                             <div className="space-y-2.5">
-                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm hover:bg-status-velocity-bg/40 hover:border-l-2 hover:border-status-velocity-text transition-all">
+                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm border border-border-slate-subtle/40">
                                 <div className="flex items-center gap-2 min-w-0">
-                                  <span className="material-symbols-outlined text-status-velocity-text text-[18px]">bolt</span>
-                                  <span className="font-body-sm text-body-sm text-on-surface truncate">
+                                  <span className="material-symbols-outlined text-status-velocity-text text-base shrink-0">bolt</span>
+                                  <span className="text-xs sm:text-sm text-on-surface truncate">
                                     AI triages & initiates instant reply
                                   </span>
                                 </div>
-                                <span className="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0">
+                                <span className="material-symbols-outlined text-status-velocity-text text-base shrink-0">
                                   check
                                 </span>
                               </div>
-                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm hover:bg-status-velocity-bg/40 hover:border-l-2 hover:border-status-velocity-text transition-all">
+                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm border border-border-slate-subtle/40">
                                 <div className="flex items-center gap-2 min-w-0">
-                                  <span className="material-symbols-outlined text-status-velocity-text text-[18px]">schedule</span>
-                                  <span className="font-body-sm text-body-sm text-on-surface truncate">
+                                  <span className="material-symbols-outlined text-status-velocity-text text-base shrink-0">schedule</span>
+                                  <span className="text-xs sm:text-sm text-on-surface truncate">
                                     Bidirectional sync across CRM & ops
                                   </span>
                                 </div>
-                                <span className="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0">
+                                <span className="material-symbols-outlined text-status-velocity-text text-base shrink-0">
                                   check
                                 </span>
                               </div>
-                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm hover:bg-status-velocity-bg/40 hover:border-l-2 hover:border-status-velocity-text transition-all">
+                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm border border-border-slate-subtle/40">
                                 <div className="flex items-center gap-2 min-w-0">
-                                  <span className="material-symbols-outlined text-status-velocity-text text-[18px]">description</span>
-                                  <span className="font-body-sm text-body-sm text-on-surface truncate">
+                                  <span className="material-symbols-outlined text-status-velocity-text text-base shrink-0">description</span>
+                                  <span className="text-xs sm:text-sm text-on-surface truncate">
                                     Contextual reports generated hourly
                                   </span>
                                 </div>
-                                <span className="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0">
+                                <span className="material-symbols-outlined text-status-velocity-text text-base shrink-0">
                                   check
                                 </span>
                               </div>
-                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm hover:bg-status-velocity-bg/40 hover:border-l-2 hover:border-status-velocity-text transition-all">
+                              <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm border border-border-slate-subtle/40">
                                 <div className="flex items-center gap-2 min-w-0">
-                                  <span className="material-symbols-outlined text-status-velocity-text text-[18px]">trending_up</span>
-                                  <span className="font-body-sm text-body-sm text-on-surface truncate">
+                                  <span className="material-symbols-outlined text-status-velocity-text text-base shrink-0">trending_up</span>
+                                  <span className="text-xs sm:text-sm text-on-surface truncate">
                                     Team focused 100% on high leverage growth
                                   </span>
                                 </div>
-                                <span className="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0">
+                                <span className="material-symbols-outlined text-status-velocity-text text-base shrink-0">
                                   check
                                 </span>
                               </div>
                             </div>
                           </div>
 
-                          <div className="mt-3 p-3 rounded-lg bg-status-velocity-bg text-status-velocity-text flex items-center justify-between border border-status-velocity-badge/80">
+                          <div className="mt-2 p-3 rounded-lg bg-status-velocity-bg text-status-velocity-text flex items-center justify-between border border-status-velocity-badge/80">
                             <div className="flex items-center gap-3">
                               <div className="w-8 h-8 rounded-full bg-status-velocity-badge flex items-center justify-center shrink-0">
-                                <span className="material-symbols-outlined text-status-velocity-text text-[18px]">speed</span>
+                                <span className="material-symbols-outlined text-status-velocity-text text-base">speed</span>
                               </div>
                               <div className="leading-tight">
-                                <div className="font-headline-md text-[16px] font-bold">Hours saved</div>
-                                <div className="font-body-sm text-[12px] opacity-90">every week across teams</div>
+                                <div className="text-sm font-bold">Hours saved</div>
+                                <div className="text-xs opacity-90">every week across teams</div>
                               </div>
                             </div>
                             <div className="relative w-14 h-8 flex items-center justify-center">
@@ -571,54 +587,54 @@ export default function Home() {
           </div>
 
           {/* 2. SOCIAL PROOF / LOGO BAR */}
-          <section className="w-full bg-surface-subtle py-12">
-            <div className="max-w-[1240px] mx-auto px-6 flex flex-col items-center gap-6">
-              <span className="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-text-muted text-center">
+          <section className="w-full bg-surface-subtle py-8 sm:py-12 border-y border-border-slate-subtle/60">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center gap-4 sm:gap-6">
+              <span className="text-xs font-semibold uppercase tracking-wider text-text-muted text-center">
                 TRUSTED BY FORWARD-THINKING STARTUPS AND TEAMS
               </span>
-              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14 text-text-muted">
-                <span className="font-headline-md text-[20px] font-bold tracking-tight hover:text-on-surface transition-colors cursor-default">Razorpay</span>
-                <span className="font-headline-md text-[20px] font-extrabold tracking-widest hover:text-on-surface transition-colors cursor-default">OYO</span>
-                <span className="font-headline-md text-[20px] font-bold tracking-tight lowercase hover:text-on-surface transition-colors cursor-default">zepto</span>
-                <span className="font-headline-md text-[20px] font-semibold tracking-wide lowercase hover:text-on-surface transition-colors cursor-default">dunzo</span>
-                <div className="flex items-center gap-1 font-headline-md text-[20px] font-black tracking-tight hover:text-on-surface transition-colors cursor-default">
-                  <span className="material-symbols-outlined text-[20px]">shield</span>
+              <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14 text-text-muted">
+                <span className="text-lg sm:text-xl font-bold tracking-tight hover:text-on-surface transition-colors cursor-default">Razorpay</span>
+                <span className="text-lg sm:text-xl font-extrabold tracking-widest hover:text-on-surface transition-colors cursor-default">OYO</span>
+                <span className="text-lg sm:text-xl font-bold tracking-tight lowercase hover:text-on-surface transition-colors cursor-default">zepto</span>
+                <span className="text-lg sm:text-xl font-semibold tracking-wide lowercase hover:text-on-surface transition-colors cursor-default">dunzo</span>
+                <div className="flex items-center gap-1 text-lg sm:text-xl font-black tracking-tight hover:text-on-surface transition-colors cursor-default">
+                  <span className="material-symbols-outlined text-lg">shield</span>
                   <span>CRED</span>
                 </div>
-                <span className="font-headline-md text-[20px] font-semibold tracking-tight lowercase hover:text-on-surface transition-colors cursor-default">slice</span>
-                <span className="font-headline-md text-[20px] font-bold tracking-tight lowercase hover:text-on-surface transition-colors cursor-default">meesho</span>
-                <span className="font-headline-md text-[20px] font-bold tracking-wider lowercase hover:text-on-surface transition-colors cursor-default">rapido</span>
+                <span className="text-lg sm:text-xl font-semibold tracking-tight lowercase hover:text-on-surface transition-colors cursor-default">slice</span>
+                <span className="text-lg sm:text-xl font-bold tracking-tight lowercase hover:text-on-surface transition-colors cursor-default">meesho</span>
+                <span className="text-lg sm:text-xl font-bold tracking-wider lowercase hover:text-on-surface transition-colors cursor-default">rapido</span>
               </div>
             </div>
           </section>
 
           {/* 3. HOW IT WORKS */}
-          <section className="max-w-[1240px] mx-auto px-6 py-24 space-y-12" id="how-it-works">
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 space-y-10 sm:space-y-12" id="how-it-works">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-              <div className="space-y-2 max-w-2xl">
+              <div className="space-y-2.5 max-w-2xl">
                 <div className="flex items-center gap-2">
-                  <span className="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-primary font-bold">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary">
                     HOW IT WORKS
                   </span>
-                  <span className="px-2 py-0.5 rounded-full bg-status-velocity-bg text-status-velocity-text font-code-stat text-[10px] font-semibold flex items-center gap-1">
+                  <span className="px-2 py-0.5 rounded-full bg-status-velocity-bg text-status-velocity-text font-mono text-xs font-semibold flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-status-velocity-text"></span>
                     PIPELINE ACTIVE
                   </span>
                 </div>
-                <h2 className="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-on-surface font-bold tracking-tight">
                   A simple, proven way to automate what matters.
                 </h2>
-                <p className="font-body-md text-body-md text-text-body">
+                <p className="text-sm sm:text-base text-text-body leading-relaxed">
                   We take a product-first approach — understand your business, find the real opportunities, build the right solution, and help you see the impact.
                 </p>
               </div>
-              <div>
+              <div className="shrink-0">
                 <a
-                  className="h-11 px-5 rounded-lg bg-surface-dark text-surface-bg font-label-badge text-label-badge inline-flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-sm group whitespace-nowrap"
+                  className="h-11 px-5 rounded-lg bg-surface-dark text-surface-bg text-xs sm:text-sm inline-flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-sm group whitespace-nowrap font-semibold"
                   href="#product-audit"
                 >
                   <span>See Detailed Process</span>
-                  <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">
+                  <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
                     arrow_forward
                   </span>
                 </a>
@@ -645,76 +661,76 @@ export default function Home() {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
-                        <span className="material-symbols-outlined text-[22px]">search</span>
+                        <span className="material-symbols-outlined text-xl">search</span>
                       </div>
                       <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
-                        <span className="font-code-stat text-[12px] text-primary font-semibold">01</span>
+                        <span className="font-mono text-xs text-primary font-semibold">01</span>
                         <span className="h-px w-4 bg-primary/40"></span>
                       </div>
-                      <h3 className="font-headline-md text-[18px] font-bold text-on-surface group-hover:text-primary transition-colors">Understand</h3>
+                      <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Understand</h3>
                     </div>
                   </div>
-                  <p className="font-body-sm text-body-sm text-text-body">We learn about your product, users, team and current workflows.</p>
+                  <p className="text-sm text-text-body leading-normal">We learn about your product, users, team and current workflows.</p>
                 </div>
 
                 <div className="bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-all border border-border-slate-subtle/80 group">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
-                        <span className="material-symbols-outlined text-[22px]">query_stats</span>
+                        <span className="material-symbols-outlined text-xl">query_stats</span>
                       </div>
                       <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
-                        <span className="font-code-stat text-[12px] text-primary font-semibold">02</span>
+                        <span className="font-mono text-xs text-primary font-semibold">02</span>
                         <span className="h-px w-4 bg-primary/40"></span>
                       </div>
-                      <h3 className="font-headline-md text-[18px] font-bold text-on-surface group-hover:text-primary transition-colors">Find Opportunities</h3>
+                      <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Find Opportunities</h3>
                     </div>
                   </div>
-                  <p className="font-body-sm text-body-sm text-text-body">We identify <strong className="text-on-surface font-semibold">gaps</strong>, bottlenecks and high-impact automation opportunities.</p>
+                  <p className="text-sm text-text-body leading-normal">We identify <strong className="text-on-surface font-semibold">gaps</strong>, bottlenecks and high-impact automation opportunities.</p>
                 </div>
 
                 <div className="bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-all border border-border-slate-subtle/80 group">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
-                        <span className="material-symbols-outlined text-[22px]">ballot</span>
+                        <span className="material-symbols-outlined text-xl">ballot</span>
                       </div>
                       <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
-                        <span className="font-code-stat text-[12px] text-primary font-semibold">03</span>
+                        <span className="font-mono text-xs text-primary font-semibold">03</span>
                         <span className="h-px w-4 bg-primary/40"></span>
                       </div>
-                      <h3 className="font-headline-md text-[18px] font-bold text-on-surface group-hover:text-primary transition-colors">Plan & Prioritize</h3>
+                      <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Plan & Prioritize</h3>
                     </div>
                   </div>
-                  <p className="font-body-sm text-body-sm text-text-body">We recommend what to automate, estimate impact and create an implementation plan.</p>
+                  <p className="text-sm text-text-body leading-normal">We recommend what to automate, estimate impact and create an implementation plan.</p>
                 </div>
 
                 <div className="bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-all border border-border-slate-subtle/80 group">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="w-10 h-10 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-all shadow-xs">
-                        <span className="material-symbols-outlined text-[22px]">inventory_2</span>
+                        <span className="material-symbols-outlined text-xl">inventory_2</span>
                       </div>
                       <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
-                        <span className="font-code-stat text-[12px] text-primary font-semibold">04</span>
+                        <span className="font-mono text-xs text-primary font-semibold">04</span>
                         <span className="h-px w-4 bg-primary/40"></span>
                       </div>
-                      <h3 className="font-headline-md text-[18px] font-bold text-on-surface group-hover:text-primary transition-colors">Build & Integrate</h3>
+                      <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Build & Integrate</h3>
                     </div>
                   </div>
-                  <p className="font-body-sm text-body-sm text-text-body">We design, build and integrate the solution with your existing tools and product.</p>
+                  <p className="text-sm text-text-body leading-normal">We design, build and integrate the solution with your existing tools and product.</p>
                 </div>
 
                 <div className="bg-surface-bg rounded-xl p-5 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-all border border-status-velocity-badge/80 group relative overflow-hidden">
@@ -722,75 +738,62 @@ export default function Home() {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="w-10 h-10 rounded-lg bg-status-velocity-bg flex items-center justify-center text-status-velocity-text group-hover:bg-status-velocity-text group-hover:text-surface-bg transition-all shadow-xs">
-                        <span className="material-symbols-outlined text-[22px]">ssid_chart</span>
+                        <span className="material-symbols-outlined text-xl">ssid_chart</span>
                       </div>
                       <span className="w-2 h-2 rounded-full bg-status-velocity-text"></span>
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
-                        <span className="font-code-stat text-[12px] text-status-velocity-text font-semibold">05</span>
+                        <span className="font-mono text-xs text-status-velocity-text font-semibold">05</span>
                         <span className="h-px w-4 bg-status-velocity-text/40"></span>
                       </div>
-                      <h3 className="font-headline-md text-[18px] font-bold text-on-surface group-hover:text-status-velocity-text transition-colors">Measure & Improve</h3>
+                      <h3 className="text-lg font-bold text-on-surface group-hover:text-status-velocity-text transition-colors">Measure & Improve</h3>
                     </div>
                   </div>
-                  <p className="font-body-sm text-body-sm text-text-body">You start saving time, reduce costs and we keep optimizing based on real results.</p>
+                  <p className="text-sm text-text-body leading-normal">We track performance, refine workflows and ensure adoption across your team.</p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* 4. PRODUCT AUDIT */}
-          <section className="w-full bg-surface-subtle py-24" id="product-audit">
-            <div className="max-w-[1240px] mx-auto px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div className="lg:col-span-5 space-y-6">
-                  <div className="space-y-2">
-                    <span className="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-primary font-bold">
-                      PRODUCT AUDIT
-                    </span>
-                    <h2 className="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
-                      Get a clear view of what&apos;s working, what&apos;s missing, and what to automate.
-                    </h2>
-                    <p className="font-body-md text-body-md text-text-body">
-                      A structured audit to understand your product, operations and workflows — and find where AI can create real leverage.
-                    </p>
-                  </div>
+          {/* 4. PRODUCT & WORKFLOW AUDIT */}
+          <section className="w-full bg-surface-subtle py-16 sm:py-24" id="product-audit">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-10 sm:space-y-12">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div className="lg:col-span-5 space-y-5">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+                    DEEP PRODUCT & WORKFLOW AUDIT
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl text-on-surface font-bold tracking-tight">
+                    We look at your entire workflow — not just one task.
+                  </h2>
+                  <p className="text-sm sm:text-base text-text-body leading-relaxed">
+                    Most automations fail because they solve isolated problems without considering the bigger picture. We evaluate your product, team, and operations together to find high-impact opportunities that move the needle.
+                  </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                    <div className="flex items-center gap-2.5 p-3 rounded-lg bg-surface-bg shadow-sm hover:translate-x-1 transition-transform">
-                      <span className="material-symbols-outlined text-primary text-[20px]">description</span>
-                      <span className="font-body-sm text-body-sm font-semibold text-on-surface">Product Analysis</span>
-                    </div>
-                    <div className="flex items-center gap-2.5 p-3 rounded-lg bg-surface-bg shadow-sm hover:translate-x-1 transition-transform">
-                      <span className="material-symbols-outlined text-secondary text-[20px]">map</span>
-                      <span className="font-body-sm text-body-sm font-semibold text-on-surface">Workflow Mapping</span>
-                    </div>
-                    <div className="flex items-center gap-2.5 p-3 rounded-lg bg-surface-bg shadow-sm hover:translate-x-1 transition-transform">
-                      <span className="material-symbols-outlined text-status-friction-text text-[20px]">adjust</span>
-                      <span className="font-body-sm text-body-sm font-semibold text-on-surface">Gap Identification</span>
-                    </div>
-                    <div className="flex items-center gap-2.5 p-3 rounded-lg bg-surface-bg shadow-sm hover:translate-x-1 transition-transform">
-                      <span className="material-symbols-outlined text-primary-container text-[20px]">bolt</span>
-                      <span className="font-body-sm text-body-sm font-semibold text-on-surface">Automation Opportunities</span>
-                    </div>
-                    <div className="flex items-center gap-2.5 p-3 rounded-lg bg-surface-bg shadow-sm hover:translate-x-1 transition-transform">
-                      <span className="material-symbols-outlined text-status-velocity-text text-[20px]">analytics</span>
-                      <span className="font-body-sm text-body-sm font-semibold text-on-surface">Impact Estimation</span>
-                    </div>
-                    <div className="flex items-center gap-2.5 p-3 rounded-lg bg-surface-bg shadow-sm hover:translate-x-1 transition-transform">
-                      <span className="material-symbols-outlined text-on-primary-fixed-variant text-[20px]">checklist</span>
-                      <span className="font-body-sm text-body-sm font-semibold text-on-surface">Implementation Plan</span>
-                    </div>
+                  <div className="space-y-3 pt-2">
+                    {[
+                      "End-to-end product architecture and data flows",
+                      "Operational bottlenecks and repetitive tasks across teams",
+                      "Integration points with current tools and databases",
+                      "Prioritized roadmap with estimated impact and timeline",
+                    ].map((bullet, i) => (
+                      <div key={i} className="flex items-start gap-2.5">
+                        <div className="w-5 h-5 rounded-full bg-status-velocity-bg text-status-velocity-text flex items-center justify-center shrink-0 mt-0.5">
+                          <span className="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <span className="text-sm text-on-surface font-medium">{bullet}</span>
+                      </div>
+                    ))}
                   </div>
 
                   <div className="pt-2">
                     <a
-                      className="h-12 px-6 rounded-lg bg-surface-dark text-surface-bg font-label-badge text-label-badge inline-flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-md group"
+                      className="h-11 px-6 rounded-lg bg-primary text-surface-bg text-xs sm:text-sm inline-flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-md group font-semibold"
                       href="#consultation"
                     >
-                      <span>Book a Product Audit</span>
-                      <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">
+                      <span>Request an Audit</span>
+                      <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
                         arrow_forward
                       </span>
                     </a>
@@ -798,28 +801,28 @@ export default function Home() {
                 </div>
 
                 <div className="lg:col-span-7">
-                  <div className="relative bg-surface-bg rounded-xl p-6 sm:p-8 shadow-xl space-y-6 border border-border-slate-subtle/80 overflow-hidden">
+                  <div className="relative bg-surface-bg rounded-xl p-5 sm:p-7 shadow-xl space-y-6 border border-border-slate-subtle/80 overflow-hidden">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border-slate-subtle/60">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary">
-                          <span className="material-symbols-outlined text-[20px]">lab_profile</span>
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-8 h-8 rounded-lg bg-electric-indigo-subtle flex items-center justify-center text-primary shrink-0">
+                          <span className="material-symbols-outlined text-lg">lab_profile</span>
                         </div>
                         <div>
-                          <h3 className="font-headline-md text-headline-md font-bold text-on-surface">Product Analysis Report</h3>
-                          <div className="flex items-center gap-1.5 text-[11px] font-code-stat text-status-velocity-text">
+                          <h3 className="text-base sm:text-lg font-bold text-on-surface">Product Analysis Report</h3>
+                          <div className="flex items-center gap-1.5 font-mono text-xs text-status-velocity-text">
                             <span className="w-1.5 h-1.5 rounded-full bg-status-velocity-text"></span>
                             LIVE SCANNING: INGESTED 42 WORKFLOW NODES
                           </div>
                         </div>
                       </div>
 
-                      {/* Tab Pills */}
-                      <div className="flex items-center gap-1 p-1 bg-surface-container rounded-lg text-text-muted font-body-sm text-[12px]">
+                      {/* Tab Pills with horizontal scroll on small mobile */}
+                      <div className="flex items-center gap-1 p-1 bg-surface-container rounded-lg text-text-muted text-xs overflow-x-auto max-w-full">
                         {["overview", "gaps", "opportunities", "impact"].map((tabKey) => (
                           <button
                             key={tabKey}
                             onClick={() => setActiveTab(tabKey)}
-                            className={`px-2.5 py-1 rounded transition-all capitalize ${
+                            className={`px-2.5 py-1 rounded transition-all capitalize whitespace-nowrap shrink-0 text-xs ${
                               activeTab === tabKey
                                 ? "bg-surface-bg text-on-surface font-semibold shadow-xs flex items-center gap-1"
                                 : "hover:text-on-surface"
@@ -837,10 +840,10 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center relative z-10">
                       <div className="md:col-span-7 space-y-3">
                         <div className="flex items-center justify-between">
-                          <span className="font-label-eyebrow text-label-eyebrow uppercase tracking-wider text-text-muted">
+                          <span className="text-xs font-semibold uppercase tracking-wider text-text-muted">
                             {tabData[activeTab]?.title}
                           </span>
-                          <span className="font-code-stat text-[11px] text-primary">
+                          <span className="font-mono text-xs text-primary">
                             SYNCING 60fps
                           </span>
                         </div>
@@ -851,15 +854,15 @@ export default function Home() {
                             className="p-3 rounded-lg bg-surface-subtle flex items-center justify-between gap-2 shadow-sm border border-transparent hover:border-primary/30 transition-all"
                           >
                             <div className="flex items-center gap-2 min-w-0">
-                              <span className="material-symbols-outlined text-status-velocity-text text-[18px] shrink-0">
+                              <span className="material-symbols-outlined text-status-velocity-text text-base shrink-0">
                                 check_circle
                               </span>
-                              <span className="font-body-sm text-body-sm text-on-surface truncate">
+                              <span className="text-xs sm:text-sm text-on-surface truncate">
                                 {item.text}
                               </span>
                             </div>
                             <span
-                              className={`font-label-badge text-[11px] px-2 py-0.5 rounded-full ${item.tagClass} font-bold whitespace-nowrap`}
+                              className={`text-xs px-2 py-0.5 rounded-full ${item.tagClass} font-semibold whitespace-nowrap shrink-0`}
                             >
                               {item.tag}
                             </span>
@@ -867,24 +870,24 @@ export default function Home() {
                         ))}
                       </div>
 
-                      <div className="md:col-span-5 flex flex-col justify-center p-6 rounded-xl bg-electric-indigo-subtle text-center space-y-4 border border-primary/20 relative overflow-hidden">
+                      <div className="md:col-span-5 flex flex-col justify-center p-5 sm:p-6 rounded-xl bg-electric-indigo-subtle text-center space-y-3 border border-primary/20 relative overflow-hidden">
                         <div className="absolute -right-4 -bottom-4 w-20 h-20 bg-primary/10 rounded-full blur-xl pointer-events-none"></div>
-                        <span className="font-label-eyebrow text-label-eyebrow uppercase tracking-wider text-primary font-bold">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-primary">
                           Estimated Impact
                         </span>
-                        <div className="font-display-hero text-[44px] leading-tight font-extrabold text-primary tracking-tight">
+                        <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary tracking-tight font-mono">
                           60–70%
                         </div>
-                        <p className="font-body-sm text-body-sm text-text-body font-medium">
+                        <p className="text-xs sm:text-sm text-text-body font-medium">
                           reduction in manual work
                         </p>
 
-                        <div className="flex items-end justify-center gap-2 h-14 pt-2">
+                        <div className="flex items-end justify-center gap-2 h-12 pt-2">
                           <div className="w-3 bg-primary/30 rounded-t h-4"></div>
                           <div className="w-3 bg-primary/50 rounded-t h-6"></div>
                           <div className="w-3 bg-primary/70 rounded-t h-9"></div>
-                          <div className="w-3 bg-primary/90 rounded-t h-12"></div>
-                          <div className="w-3 bg-primary rounded-t h-14"></div>
+                          <div className="w-3 bg-primary/90 rounded-t h-11"></div>
+                          <div className="w-3 bg-primary rounded-t h-12"></div>
                         </div>
                       </div>
                     </div>
@@ -895,20 +898,20 @@ export default function Home() {
           </section>
 
           {/* 5. COMMON USE CASES */}
-          <section className="max-w-[1240px] mx-auto px-6 py-24 space-y-12" id="use-cases">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-primary font-bold">
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 space-y-10 sm:space-y-12" id="use-cases">
+            <div className="text-center max-w-2xl mx-auto space-y-2.5">
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">
                 COMMON USE CASES
               </span>
-              <h2 className="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-on-surface font-bold tracking-tight">
                 Where AI can create leverage in your business.
               </h2>
-              <p className="font-body-md text-body-md text-text-body">
+              <p className="text-sm sm:text-base text-text-body leading-relaxed">
                 These are common areas we find in product and operations teams. Your audit will uncover the specific opportunities for your business.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {[
                 { title: "Customer Support", icon: "chat" },
                 { title: "Operations", icon: "settings" },
@@ -921,14 +924,14 @@ export default function Home() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-xl bg-surface-bg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center space-y-3 group cursor-pointer border border-border-slate-subtle/60"
+                  className="p-4 sm:p-6 rounded-xl bg-surface-bg shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center space-y-2.5 group cursor-pointer border border-border-slate-subtle/60"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-colors">
-                    <span className="material-symbols-outlined text-[24px]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-electric-indigo-subtle flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bg transition-colors">
+                    <span className="material-symbols-outlined text-xl sm:text-2xl">
                       {item.icon}
                     </span>
                   </div>
-                  <h3 className="font-headline-md text-[18px] font-bold text-on-surface">
+                  <h3 className="text-sm sm:text-base font-bold text-on-surface">
                     {item.title}
                   </h3>
                 </div>
@@ -937,51 +940,51 @@ export default function Home() {
           </section>
 
           {/* 6. LEAD CAPTURE & CONSULTATION */}
-          <section className="w-full bg-surface-subtle py-24" id="consultation">
-            <div className="max-w-[1240px] mx-auto px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div className="lg:col-span-6 space-y-6">
-                  <span className="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-primary font-bold">
+          <section className="w-full bg-surface-subtle py-16 sm:py-24 border-t border-border-slate-subtle/60" id="consultation">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div className="lg:col-span-6 space-y-5 sm:space-y-6">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary">
                     FREE CONSULTATION
                   </span>
-                  <h2 className="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl text-on-surface font-bold tracking-tight">
                     Let&apos;s find your AI opportunities.
                   </h2>
-                  <p className="font-body-lg text-body-lg text-text-body">
+                  <p className="text-sm sm:text-base text-text-body leading-relaxed">
                     A 30-minute consultation to understand your product, discuss your challenges and explore <strong className="text-on-surface font-semibold">high-impact</strong> automation opportunities.
                   </p>
 
-                  <div className="space-y-3 pt-2">
+                  <div className="space-y-3 pt-1">
                     {["No obligation", "Strategic discussion", "Actionable insights"].map((pt, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <div className="w-6 h-6 rounded-full bg-status-velocity-bg text-status-velocity-text flex items-center justify-center shrink-0">
-                          <span className="material-symbols-outlined text-[16px]">check</span>
+                          <span className="material-symbols-outlined text-sm">check</span>
                         </div>
-                        <span className="font-body-md text-body-md text-on-surface font-medium">{pt}</span>
+                        <span className="text-sm text-on-surface font-medium">{pt}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="pt-4 flex items-center gap-3 text-text-muted font-body-sm text-body-sm">
-                    <span className="material-symbols-outlined text-[20px] text-primary">calendar_month</span>
+                  <div className="pt-2 flex items-center gap-2.5 text-text-muted text-xs sm:text-sm">
+                    <span className="material-symbols-outlined text-lg text-primary">calendar_month</span>
                     <span>Tell us about your business, we&apos;ll take it from here.</span>
                   </div>
                 </div>
 
                 <div className="lg:col-span-6">
-                  <div className="bg-surface-bg rounded-xl p-8 shadow-xl space-y-6 border border-border-slate-subtle/80">
+                  <div className="bg-surface-bg rounded-xl p-5 sm:p-8 shadow-xl space-y-5 border border-border-slate-subtle/80">
                     <div className="space-y-1">
-                      <h3 className="font-headline-md text-headline-md font-bold text-on-surface">Book a Free Consultation</h3>
-                      <p className="font-body-sm text-body-sm text-text-muted">Schedule a direct discovery session with our technical leads.</p>
+                      <h3 className="text-lg sm:text-xl font-bold text-on-surface">Book a Free Consultation</h3>
+                      <p className="text-xs sm:text-sm text-text-muted">Schedule a direct discovery session with our technical leads.</p>
                     </div>
 
                     <form className="space-y-4" onSubmit={handleFormSubmit}>
                       <div>
-                        <label className="block font-body-sm text-[13px] font-semibold text-on-surface mb-1" htmlFor="name">
+                        <label className="block text-xs font-semibold text-on-surface mb-1.5" htmlFor="name">
                           Name <span className="text-error">*</span>
                         </label>
                         <input
-                          className="w-full h-11 px-4 rounded-lg bg-surface-subtle text-on-surface placeholder:text-text-muted text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-bg shadow-sm border border-border-slate-subtle"
+                          className="w-full h-11 px-3.5 rounded-lg bg-surface-subtle text-on-surface placeholder:text-text-muted text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-bg shadow-sm border border-border-slate-subtle"
                           id="name"
                           name="name"
                           placeholder="Your Name"
@@ -990,11 +993,11 @@ export default function Home() {
                         />
                       </div>
                       <div>
-                        <label className="block font-body-sm text-[13px] font-semibold text-on-surface mb-1" htmlFor="email">
+                        <label className="block text-xs font-semibold text-on-surface mb-1.5" htmlFor="email">
                           Email <span className="text-error">*</span>
                         </label>
                         <input
-                          className="w-full h-11 px-4 rounded-lg bg-surface-subtle text-on-surface placeholder:text-text-muted text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-bg shadow-sm border border-border-slate-subtle"
+                          className="w-full h-11 px-3.5 rounded-lg bg-surface-subtle text-on-surface placeholder:text-text-muted text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-bg shadow-sm border border-border-slate-subtle"
                           id="email"
                           name="email"
                           placeholder="you@company.com"
@@ -1003,11 +1006,11 @@ export default function Home() {
                         />
                       </div>
                       <div>
-                        <label className="block font-body-sm text-[13px] font-semibold text-on-surface mb-1" htmlFor="phone">
+                        <label className="block text-xs font-semibold text-on-surface mb-1.5" htmlFor="phone">
                           Phone Number <span className="text-error">*</span>
                         </label>
                         <input
-                          className="w-full h-11 px-4 rounded-lg bg-surface-subtle text-on-surface placeholder:text-text-muted text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-bg shadow-sm border border-border-slate-subtle"
+                          className="w-full h-11 px-3.5 rounded-lg bg-surface-subtle text-on-surface placeholder:text-text-muted text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-bg shadow-sm border border-border-slate-subtle"
                           id="phone"
                           name="phone"
                           placeholder="+1 (555) 000-0000"
@@ -1016,11 +1019,11 @@ export default function Home() {
                         />
                       </div>
                       <div>
-                        <label className="block font-body-sm text-[13px] font-semibold text-on-surface mb-1" htmlFor="message">
+                        <label className="block text-xs font-semibold text-on-surface mb-1.5" htmlFor="message">
                           Message <span className="text-text-muted font-normal">(Optional)</span>
                         </label>
                         <textarea
-                          className="w-full p-4 rounded-lg bg-surface-subtle text-on-surface placeholder:text-text-muted text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-bg shadow-sm resize-none border border-border-slate-subtle"
+                          className="w-full p-3.5 rounded-lg bg-surface-subtle text-on-surface placeholder:text-text-muted text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-bg shadow-sm resize-none border border-border-slate-subtle"
                           id="message"
                           name="message"
                           placeholder="Briefly describe your business or what you'd like to automate..."
@@ -1029,18 +1032,18 @@ export default function Home() {
                       </div>
                       <button
                         disabled={isSubmitting}
-                        className="w-full h-12 rounded-lg bg-surface-dark text-surface-bg font-label-badge text-label-badge inline-flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-md group font-semibold"
+                        className="w-full h-12 rounded-lg bg-surface-dark text-surface-bg text-sm inline-flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-md group font-semibold"
                         type="submit"
                       >
                         <span>{isSubmitting ? "Submitting..." : "Book Free Consultation"}</span>
-                        <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">
+                        <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
                           arrow_forward
                         </span>
                       </button>
                     </form>
 
                     {formSuccess && (
-                      <div className="p-4 rounded-lg bg-status-velocity-bg text-status-velocity-text text-center font-body-sm text-body-sm font-semibold border border-status-velocity-badge">
+                      <div className="p-4 rounded-lg bg-status-velocity-bg text-status-velocity-text text-center text-xs sm:text-sm font-semibold border border-status-velocity-badge">
                         ✓ Consultation requested. We will reach out within 24 hours with your audit framework.
                       </div>
                     )}
@@ -1054,45 +1057,45 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-        <div className="max-w-[1240px] mx-auto px-6 py-space-2xl flex flex-col gap-space-xl">
-          <div className="bg-surface-dark rounded-xl p-space-xl shadow-[0_20px_40px_-8px_rgba(9,13,22,0.12)] flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg">
-            <div className="space-y-space-xs">
-              <div className="flex items-center gap-space-xs text-secondary-fixed">
-                <span className="font-code-stat text-code-stat text-primary-fixed">//</span>
-                <span className="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-primary-fixed">High Velocity Automation</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 flex flex-col gap-10">
+          <div className="bg-surface-dark rounded-xl p-6 sm:p-10 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-xl">
+              <div className="flex items-center gap-2 text-secondary-fixed">
+                <span className="font-mono text-xs text-primary-fixed font-bold">//</span>
+                <span className="text-xs uppercase tracking-wider text-primary-fixed font-semibold">High Velocity Automation</span>
               </div>
-              <h3 className="font-headline-lg text-headline-lg text-surface-bg font-bold tracking-tight">Ready to eliminate internal workflow friction?</h3>
-              <p className="font-body-md text-body-md text-slate-400">Schedule an institutional bottleneck audit. Actionable architectural insights in 48 hours.</p>
+              <h3 className="text-xl sm:text-2xl text-surface-bg font-bold tracking-tight">Ready to eliminate internal workflow friction?</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">Schedule an institutional bottleneck audit. Actionable architectural insights in 48 hours.</p>
             </div>
-            <div className="flex items-center gap-space-md w-full md:w-auto">
+            <div className="flex items-center gap-3 w-full md:w-auto shrink-0">
               <a
-                className="h-12 px-6 rounded-lg bg-surface-bg text-surface-dark font-label-badge text-label-badge inline-flex items-center justify-center gap-space-xs hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors shadow-sm w-full md:w-auto font-semibold"
+                className="h-12 px-6 rounded-lg bg-surface-bg text-surface-dark text-xs sm:text-sm inline-flex items-center justify-center gap-2 hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors shadow-sm w-full md:w-auto font-semibold"
                 data-path="book-an-audit"
                 href="#consultation"
               >
                 <span>Request Audit Spec</span>
-                <span className="material-symbols-outlined text-[18px]">terminal</span>
+                <span className="material-symbols-outlined text-base">terminal</span>
               </a>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-space-xl pt-space-md">
-            <div className="space-y-space-sm">
-              <div className="flex items-center gap-space-xs">
-                <span className="font-code-stat text-code-stat text-primary-container font-bold">//</span>
-                <span className="font-headline-md text-headline-md tracking-tight text-on-surface font-bold">Strafuse</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-4">
+            <div className="col-span-2 md:col-span-1 space-y-3">
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-sm text-primary-container font-bold">//</span>
+                <span className="text-lg tracking-tight text-on-surface font-bold">Strafuse</span>
               </div>
-              <p className="font-body-sm text-body-sm text-text-muted">Architectural AI workflow audits and automated deployment engineering for enterprise ops leaders.</p>
-              <div className="flex items-center gap-space-xs">
-                <span className="inline-flex items-center px-2 py-0.5 rounded-full font-code-stat text-[11px] bg-status-velocity-bg text-status-velocity-text font-semibold">
+              <p className="text-xs sm:text-sm text-text-muted leading-relaxed">Architectural AI workflow audits and automated deployment engineering for enterprise ops leaders.</p>
+              <div className="flex items-center pt-1">
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full font-mono text-xs bg-status-velocity-bg text-status-velocity-text font-semibold">
                   SYSTEM: OPERATIONAL
                 </span>
               </div>
             </div>
 
-            <div className="space-y-space-sm">
-              <span className="font-label-eyebrow text-label-eyebrow uppercase tracking-wider text-on-surface font-bold">Practices</span>
-              <ul className="space-y-space-xs font-body-sm text-body-sm">
+            <div className="space-y-3">
+              <span className="text-xs uppercase tracking-wider text-on-surface font-bold block">Practices</span>
+              <ul className="space-y-2 text-xs sm:text-sm">
                 <li className="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="audit" href="#product-audit">Bottleneck Audit</a></li>
                 <li className="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="solutions" href="#how-it-works">Agent Scaffolding</a></li>
                 <li className="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="features" href="#use-cases">Stack Modernization</a></li>
@@ -1100,9 +1103,9 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="space-y-space-sm">
-              <span className="font-label-eyebrow text-label-eyebrow uppercase tracking-wider text-on-surface font-bold">Architecture</span>
-              <ul className="space-y-space-xs font-body-sm text-body-sm">
+            <div className="space-y-3">
+              <span className="text-xs uppercase tracking-wider text-on-surface font-bold block">Architecture</span>
+              <ul className="space-y-2 text-xs sm:text-sm">
                 <li className="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="features" href="#product-audit">Enterprise LLM Governance</a></li>
                 <li className="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="audit" href="#product-audit">Latency Profiling</a></li>
                 <li className="text-on-surface-variant hover:text-on-surface transition-colors"><a data-path="pricing" href="#consultation">Engagement Tiers</a></li>
@@ -1110,20 +1113,20 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="space-y-space-sm">
-              <span className="font-label-eyebrow text-label-eyebrow uppercase tracking-wider text-on-surface font-bold">Inquiries</span>
-              <p className="font-body-sm text-body-sm text-text-muted">Direct line to principal automation architects.</p>
-              <div className="font-code-stat text-code-stat text-on-surface font-semibold">advisory@strafuse.internal</div>
+            <div className="space-y-3">
+              <span className="text-xs uppercase tracking-wider text-on-surface font-bold block">Inquiries</span>
+              <p className="text-xs sm:text-sm text-text-muted leading-relaxed">Direct line to principal automation architects.</p>
+              <div className="font-mono text-xs sm:text-sm text-on-surface font-semibold pt-1">advisory@strafuse.internal</div>
             </div>
           </div>
 
-          <div className="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-text-muted">
-            <div className="flex items-center gap-space-xs font-code-stat text-[12px]">
+          <div className="pt-6 border-t border-border-slate-subtle flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-text-muted">
+            <div className="flex flex-wrap items-center gap-2 font-mono">
               <span>© 2025 Strafuse Systems Ltd.</span>
               <span>•</span>
               <span>Analytical Rigor Guaranteed</span>
             </div>
-            <div className="flex items-center gap-space-md text-[13px]">
+            <div className="flex flex-wrap items-center gap-4">
               <span className="hover:text-on-surface transition-colors cursor-pointer">Privacy Architecture</span>
               <span className="hover:text-on-surface transition-colors cursor-pointer">Service Level Agreements</span>
               <span className="hover:text-on-surface transition-colors cursor-pointer">Security Framework</span>
