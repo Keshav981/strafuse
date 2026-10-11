@@ -319,7 +319,7 @@ export default function Home() {
                       <div className="p-3.5 sm:p-4 rounded-xl bg-surface-subtle border border-border-slate-subtle/80 text-left">
                         <div className="text-xs text-text-muted font-medium">Weekly Bottlenecks</div>
                         <div className="text-xl sm:text-2xl font-bold font-mono text-status-friction-text mt-1 flex items-baseline gap-1.5">
-                          <span>-72%</span>
+                          <span>72%</span>
                           <span className="text-xs font-normal text-text-muted">eliminated</span>
                         </div>
                         <div className="text-xs text-text-muted mt-1 font-mono">Audit Spec v4.2</div>
@@ -432,7 +432,7 @@ export default function Home() {
                                   </span>
                                 </div>
                                 <span className="font-mono text-xs px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold shrink-0">
-                                  3-4 hrs/day
+                                  3 to 4 hrs/day
                                 </span>
                               </div>
                               <div className="flex items-center justify-between p-2.5 rounded-lg bg-surface-bg shadow-sm border border-border-slate-subtle/40">
@@ -454,7 +454,7 @@ export default function Home() {
                                   </span>
                                 </div>
                                 <span className="font-mono text-xs px-2 py-0.5 rounded bg-status-friction-bg text-status-friction-text font-semibold shrink-0">
-                                  1-2 hrs/day
+                                  1 to 2 hrs/day
                                 </span>
                               </div>
                             </div>
@@ -625,7 +625,7 @@ export default function Home() {
                   A simple, proven way to automate what matters.
                 </h2>
                 <p className="text-sm sm:text-base text-text-body leading-relaxed">
-                  We take a product-first approach — understand your business, find the real opportunities, build the right solution, and help you see the impact.
+                  We take a product-first approach to understand your business, find the real opportunities, build the right solution, and help you see the impact.
                 </p>
               </div>
               <div className="shrink-0">
@@ -666,9 +666,8 @@ export default function Home() {
                       <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                     </div>
                     <div>
-                      <div className="flex items-center gap-1.5 mb-1">
+                      <div className="mb-1">
                         <span className="font-mono text-xs text-primary font-semibold">01</span>
-                        <span className="h-px w-4 bg-primary/40"></span>
                       </div>
                       <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Understand</h3>
                     </div>
@@ -685,9 +684,8 @@ export default function Home() {
                       <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                     </div>
                     <div>
-                      <div className="flex items-center gap-1.5 mb-1">
+                      <div className="mb-1">
                         <span className="font-mono text-xs text-primary font-semibold">02</span>
-                        <span className="h-px w-4 bg-primary/40"></span>
                       </div>
                       <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Find Opportunities</h3>
                     </div>
@@ -704,9 +702,8 @@ export default function Home() {
                       <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                     </div>
                     <div>
-                      <div className="flex items-center gap-1.5 mb-1">
+                      <div className="mb-1">
                         <span className="font-mono text-xs text-primary font-semibold">03</span>
-                        <span className="h-px w-4 bg-primary/40"></span>
                       </div>
                       <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Plan & Prioritize</h3>
                     </div>
@@ -723,9 +720,8 @@ export default function Home() {
                       <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
                     </div>
                     <div>
-                      <div className="flex items-center gap-1.5 mb-1">
+                      <div className="mb-1">
                         <span className="font-mono text-xs text-primary font-semibold">04</span>
-                        <span className="h-px w-4 bg-primary/40"></span>
                       </div>
                       <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Build & Integrate</h3>
                     </div>
@@ -743,9 +739,8 @@ export default function Home() {
                       <span className="w-2 h-2 rounded-full bg-status-velocity-text"></span>
                     </div>
                     <div>
-                      <div className="flex items-center gap-1.5 mb-1">
+                      <div className="mb-1">
                         <span className="font-mono text-xs text-status-velocity-text font-semibold">05</span>
-                        <span className="h-px w-4 bg-status-velocity-text/40"></span>
                       </div>
                       <h3 className="text-lg font-bold text-on-surface group-hover:text-status-velocity-text transition-colors">Measure & Improve</h3>
                     </div>
@@ -765,7 +760,7 @@ export default function Home() {
                     DEEP PRODUCT & WORKFLOW AUDIT
                   </span>
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl text-on-surface font-bold tracking-tight">
-                    We look at your entire workflow — not just one task.
+                    We look at your entire workflow, not just one task.
                   </h2>
                   <p className="text-sm sm:text-base text-text-body leading-relaxed">
                     Most automations fail because they solve isolated problems without considering the bigger picture. We evaluate your product, team, and operations together to find high-impact opportunities that move the needle.
@@ -876,7 +871,7 @@ export default function Home() {
                           Estimated Impact
                         </span>
                         <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary tracking-tight font-mono">
-                          60–70%
+                          60% to 70%
                         </div>
                         <p className="text-xs sm:text-sm text-text-body font-medium">
                           reduction in manual work
